@@ -90,12 +90,16 @@
 
         .box-with-para,
         .box-with-html {
-            width: 100%;
+           
             opacity: 0;
             transform: translateX(400%);
             transition: opacity 0.4s ease, transform 0.4s ease;
-            height: 100%; /* Set a height for equal height */
+        
             box-sizing: border-box;
+            object-fit: cover;
+            width: 300px; /* Set a fixed width */
+      height: 250px; /* Set a fixed height */
+      overflow: hidden; /
         }
 
         .box-with-para.show,
@@ -255,7 +259,7 @@
                 <div class="order-flex-container">
                     <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
                         @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-                        <img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg" alt="HTML Image">
+                        <img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg"  alt="HTML Image">
                     </div>
                     <div class="flex flex-col items-start justify-start">
                         <h2 class="headline-1 section-title">Tandoori</h2>
