@@ -150,7 +150,7 @@
       text-align: center;
       box-sizing: border-box;
       border-radius: 10px;
-      padding:10px 50px 10px 50px;
+      padding: 10px 50px 10px 50px;
     }
 
     /* Add styles for the text inside the text content */
@@ -164,14 +164,192 @@
       font-size: var(--fontSize-display-1);
       line-height: var(--lineHeight-1);
     }
+
     .branches-p {
-      width:50%;
+      width: 50%;
+      text-align: start;
     }
 
     .hero .slider-item.active .branches-hero {
       animation-delay: 1000ms;
     }
 
+    @media (max-width: 320px) {
+      .branches-p {
+        width: 100%;
+        text-align: start;
+        line-height: 20px;
+      }
+      .btn-secondary {
+        width: 100%;
+      }
+      .bg-text {
+        padding-left: 0px;
+        padding: 10px 10px 10px 20px;
+      }
+      .item {
+      position: absolute;
+      width: 219px;
+      height: 200px;
+      text-align: justify;
+      background-color: #A07E55;
+      border-radius: 10px;
+      padding: 5px;
+      transition: 0.5s;
+      left: calc(50% - 110px);
+      top: 0;
+      cursor: pointer;
+    }
+    #b-next {
+      position: absolute;
+      right: 0px;
+      top: 40%;
+    }
+
+    #b-prev {
+      position: absolute;
+      left: 0px;
+      top: 40%;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    }
+    @media (max-width: 375px) {
+      .branches-p {
+        width: 100%;
+        text-align: start;
+        line-height: 20px;
+      }
+      .btn-secondary {
+        width: 100%;
+      }
+      .bg-text {
+        padding-left: 0px;
+        padding: 10px 10px 10px 20px;
+      }
+      .item {
+      position: absolute;
+      width: 219px;
+      height: 200px;
+      text-align: justify;
+      background-color: #A07E55;
+      border-radius: 10px;
+      padding: 5px;
+      transition: 0.5s;
+      left: calc(50% - 110px);
+      top: 0;
+      cursor: pointer;
+    }
+    #b-next {
+      position: absolute;
+      right: 0px;
+      top: 40%;
+    }
+
+    #b-prev {
+      position: absolute;
+      left: 0px;
+      top: 40%;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    }
+    @media (max-width: 425px) {
+      .branches-p {
+        width: 100%;
+        text-align: start;
+        line-height: 20px;
+      }
+      .btn-secondary {
+        width: 100%;
+      }
+      .bg-text {
+        padding-left: 0px;
+        padding: 10px 10px 10px 20px;
+      }
+      .item {
+      position: absolute;
+      width: 219px;
+      height: 200px;
+      text-align: justify;
+      background-color: #A07E55;
+      border-radius: 10px;
+      padding: 5px;
+      transition: 0.5s;
+      left: calc(50% - 110px);
+      top: 0;
+      cursor: pointer;
+    }
+    #b-next {
+      position: absolute;
+      right: 0px;
+      top: 40%;
+    }
+
+    #b-prev {
+      position: absolute;
+      left: 0px;
+      top: 40%;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    }
+    @media (max-width: 768px) {
+      .branches-p {
+        width: 100%;
+        text-align: start;
+        line-height: 20px;
+      }
+      .btn-secondary {
+        width: 100%;
+      }
+      .bg-text {
+        padding-left: 0px;
+        padding: 20px 10px 10px 30px;
+      }
+      .item {
+      position: absolute;
+      width: 219px;
+      height: 200px;
+      text-align: justify;
+      background-color: #A07E55;
+      border-radius: 10px;
+      padding: 5px;
+      transition: 0.5s;
+      left: calc(50% - 110px);
+      top: 0;
+      cursor: pointer;
+    }
+    #b-next {
+      position: absolute;
+      right: 0px;
+      top: 40%;
+    }
+
+    #b-prev {
+      position: absolute;
+      left: 0px;
+      top: 40%;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    }
   </style>
 
 </head>
@@ -302,7 +480,7 @@
             <div class="slider-bg">
               <img src="./assets/images/banner.jpg" width="1880" height="950" alt="" class="img-cover">
             </div>
-            <div class="flex flex-col items-start justify-start pl-20 pb-20" style="padding-top: 20rem;">
+            <div class="bg-text flex flex-col items-start justify-start pl-20 pb-20" style="padding-top: 20rem;">
               <h1 class="branches-hero slider-reveal">
                 Experience
               </h1>
@@ -312,14 +490,15 @@
               <h1 class="branches-hero slider-reveal">
                 in Japan
               </h1>
-              <p class="my-6 branches-p" style="color: white;">“Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+              <p class="my-6 branches-p" style="color: white;">“Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum
                 has been the
                 industry's standard dummy text ever since the 1500s, when an unknown printer took.
-                </p>
-              
-              <a href="#" class="btn btn-secondary"style="width:50%; margin-left: 0; border: 2px solid white;">
+              </p>
+
+              <a href="#" class="btn btn-secondary" style=" margin-left: 0; margin-bottom:20px; border: 2px solid white;">
                 <span class="text text-1">Make a Reservation</span>
-              
+
                 <span class="text text-2" aria-hidden="true">Make a Reservation</span>
               </a>
             </div>

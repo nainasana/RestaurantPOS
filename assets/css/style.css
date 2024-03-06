@@ -401,6 +401,7 @@ body.nav-active {
 
 .hero-title {
   color: var(--white);
+  margin-top: 30px;
 }
 
 .section-subtitle::after {
@@ -2013,7 +2014,7 @@ textarea.input-field {
   }
 
   .section {
-    padding: 20px 10px 10px 10px;
+    padding: 25px 25px 25px 25px;
   }
 
   .about-banner-1 {
@@ -2563,6 +2564,7 @@ textarea.input-field {
 
 
 
+
   /**
    * REUSED STYLE
    */
@@ -2766,7 +2768,7 @@ textarea.input-field {
 
   .navbar-list {
     display: flex;
-    gap: 30px;
+    gap: 10px;
   }
 
   .navbar-item {
@@ -2911,6 +2913,10 @@ textarea.input-field {
   .navbar {
     margin-inline: auto;
   }
+    .navbar-list {
+      display: flex;
+      gap: 30px;
+    }
 
 
   /**

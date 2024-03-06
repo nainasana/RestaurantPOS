@@ -44,91 +44,230 @@
     <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
     <style>
-
         body.modal-open {
             overflow: hidden;
         }
+
         .bg-A07E55 {
             background-color: #E7E5DC;
             /* Additional styles go here */
         }
+
         .hidden {
             display: none;
         }
-    
+
         .map-container,
         .text-container {
             height: 550px;
             /* Set the desired height */
         }
-        .file-body {
-            display: flex;
-            font-weight: 300;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            overflow-x: hidden;
-        }
-        .box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            margin: 10px;
-            transform: translateX(400%);
-            transition: transform 0.4s ease;
-            flex-grow: 1;
-            box-sizing: border-box;
-        }
 
-        .box:nth-of-type(even) {
-            transform: translateX(-400%);
-        }
-
-        .box.show {
-            transform: translateX(0);
-        }
-        .order-flex-container {
-            display: flex;
-            gap:100px;
-        }
-
-        .box-with-para,
-        .box-with-html {
-           
-            opacity: 0;
-            transform: translateX(400%);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            box-sizing: border-box;
-            object-fit: cover;
-            width: 500px; 
-            height: 450px;
-            overflow: hidden; 
-        }
-
-        .box-with-para.show,
-        .box-with-html.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
         .banner-section {
             display: none;
         }
+
         .modal-container {
-            top:13%;
+            top: 13%;
 
-    }
-    .modal-container.hidden {
-  display: none;
-}
+        }
 
-    /* Style to hide the scrollbar on the body when the modal is open */
-    body.modal-open {
-        overflow: hidden;
-    }
-        
+        .modal-container.hidden {
+            display: none;
+        }
+
+        /* Style to hide the scrollbar on the body when the modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 320px) {
+            .order-flex-container {
+                display: block;
+            }
+
+            .file-body {
+                display: block;
+            }
+
+            .box-with-para,
+            .box-with-html {
+                opacity: 0;
+                transform: translateX(400%);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                box-sizing: border-box;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+
+        }
+
+        @media (max-width: 425px) {
+            .order-flex-container {
+                display: block;
+            }
+
+            .file-body {
+                display: block;
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+
+            .file-body {
+                display: block;
+            }
+
+            .order-flex-container {
+                display: block;
+                gap: 0px;
+            }
+
+            .box-with-para,
+            .box-with-html {
+                opacity: 0;
+                transform: translateX(400%);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                box-sizing: border-box;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+            p {
+                width: 190px;
+                font-size: small;
+                line-height: 20px;
+            }
+
+            .btn-primary {
+                padding: 0px 8px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .file-body {
+                display: flex;
+                font-weight: 300;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                overflow-x: hidden;
+            }
+
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                margin: 10px;
+                transform: translateX(400%);
+                transition: transform 0.4s ease;
+                flex-grow: 1;
+                box-sizing: border-box;
+            }
+
+            .box:nth-of-type(even) {
+                transform: translateX(-400%);
+            }
+
+            .box.show {
+                transform: translateX(0);
+            }
+
+            .order-flex-container {
+                display: flex;
+                gap: 100px;
+            }
+
+            .box-with-para,
+            .box-with-html {
+
+                opacity: 0;
+                transform: translateX(400%);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                box-sizing: border-box;
+                object-fit: cover;
+                width: 500px;
+                height: 450px;
+                overflow: hidden;
+            }
+
+            .box-with-para.show,
+            .box-with-html.show {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .banner-section {
+                display: none;
+            }
+        }
+        @media (min-width: 1024px) {
+            .file-body {
+                display: flex;
+                font-weight: 300;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                overflow-x: hidden;
+                padding: 0 20px;
+            }
+
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                margin: 10px;
+                transform: translateX(400%);
+                transition: transform 0.4s ease;
+                flex-grow: 1;
+                box-sizing: border-box;
+            }
+
+            .box:nth-of-type(even) {
+                transform: translateX(-400%);
+            }
+
+            .box.show {
+                transform: translateX(0);
+            }
+
+            .order-flex-container {
+                display: flex;
+                gap: 100px;
+            }
+
+            .box-with-para,
+            .box-with-html {
+
+                opacity: 0;
+                transform: translateX(400%);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                box-sizing: border-box;
+                object-fit: cover;
+                width: 500px;
+                height: 450px;
+                overflow: hidden;
+            }
+
+            .box-with-para.show,
+            .box-with-html.show {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .banner-section {
+                display: none;
+            }
+        }
     </style>
 
 </head>
@@ -251,11 +390,11 @@
       -->
 
             <section class="hero text-center" aria-label="home" id="home" class="banner-section">
-            
+
                 <ul class="hero-slider" data-hero-slider>
-            
+
                     <li class="slider-item active" data-hero-slider-item>
-            
+
                         <div class="slider-bg">
                             <img src="./assets/images/ginza.jpeg" width="1880" height="950" alt="" class="img-cover">
                         </div>
@@ -263,10 +402,10 @@
                             <h1 class="display-1 hero-title slider-reveal" style="padding-top:180px;">
                                 GINZA
                             </h1>
-                            
+
                         </div>
                     </li>
-            
+
                 </ul>
             </section>
 
@@ -277,55 +416,57 @@
 
             <div class="file-body" style="margin-bottom:50px;">
 
-                <div class="order-flex-container">
+                <div class="order-flex-container h-50">
                     <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
                         @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-                        <img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg"  alt="HTML Image">
+                        <img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg" alt="HTML Image">
                     </div>
                     <div class="box box-with-para flex flex-col items-start justify-center">
                         <h2 class="headline-1 section-title">Tandoori</h2>
-                        <p class="" style="width:300px">A small description of Tandoori and why it is our specialty. and any if any TV features
+                        <p class="">A small description of Tandoori and why it is our specialty. and
+                            any if any TV features
                             we can add
                             it here</p>
-                        <a href="#" class="btn btn-primary" style="margin:40px 0px 0px 0px">
+                        <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
                             <span class="text text-1" style="color:black">Order </span>
-                        
+
                             <span class="text text-2" aria-hidden="true">Order</span>
                         </a>
                     </div>
-                
+
                 </div>
-            
+
                 <div class="order-flex-container">
                     <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
                         @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-                        <div class="flex flex-col items-start justify-start">
-                            <h2 class="headline-1 section-title">Biryani</h2>
-                            <p class="" style="width:300px">A small description of Biryani and why it is our specialty. and any if any TV
+                        <div class="flex flex-col items-center justify-center">
+                            <h2 class="headline-1 section-title mx-auto">Biryani</h2>
+                            <p class="">A small description of Biryani and why it is our specialty.
+                                and any if any TV
                                 features we can add
                                 it here</p>
-                            <a href="#" class="btn btn-primary" style="margin:40px 0px 0px 0px">
+                            <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
                                 <span class="text text-1" style="color:black">Order </span>
-                            
+
                                 <span class="text text-2" aria-hidden="true">Order</span>
                             </a>
-                            
+
                         </div>
                     </div>
                     <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
                         @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-                        
+
                         <img src="assets/images/Hyderbadi-Chicken-Biryani-scaled.jpg" alt="HTML Image">
                     </div>
                 </div>
-                
-                <a href="menu.html" class="btn btn-primary">
+
+                <a href="menu.html" class="btn btn-primary mx-auto my-10">
                     <span class="text text-1" style="color: black">View Menu</span>
                     <span class="text text-2" aria-hidden="true">View Menu</span>
                 </a>
 
 
-<!-- --------- Modal --------------  -->
+                <!-- --------- Modal --------------  -->
                 <!-- <div class="fixed inset-0 overflow-y-auto hidden modal-container" id="menuModal">
                     <div class="flex items-center justify-center min-h-screen mt-800px pt-500px">
                         <div class="bg-white p-8 w-full max-w-7xl mx-auto overflow-y-auto rounded-lg shadow-lg" style="background-color:#E7E5DC">
@@ -440,92 +581,93 @@
                         </div>
                     </div>
                 </div> -->
-                
-                
 
-                
+
+
+
             </div>
 
-<!-- ------- contact form -------  -->
+            <!-- ------- contact form -------  -->
 
-<div class="bg-white text-gray-800 text-xl">
+            <div class="bg-white text-gray-800 text-xl">
 
-    <div class="container mx-auto p-8">
+                <div class="container mx-auto p-8">
 
-        <section class="text-center mb-20">
-            <h1 class="section-subtitle-2 label-2-0">Contact Us</h1>
-            <h2 class="headline-1 section-title">Reach Us Anytime</h2>
-        </section>
+                    <section class="text-center mb-20">
+                        <h1 class="section-subtitle-2 label-2-0">Contact Us</h1>
+                        <h2 class="headline-1 section-title">Reach Us Anytime</h2>
+                    </section>
 
-        <section class="flex justify-between items-start">
-            <div class="w-1/2 pr-8">
-                <div class="h-100 map-container" id="gmap_canvas">
-                    <!-- Google Maps Embed Goes Here -->
-                    <iframe width="100%" height="84%" frameborder="0" style="border: 0"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2278954856747!2d72.8793512148932!3d19.075310857045195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c63074d4ee43%3A0xf7634ce39d6871c9!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1646289722723!5m2!1sen!2sin"
-                        allowfullscreen></iframe>
+                    <section class="flex justify-between items-start">
+                        <div class="w-1/2 pr-8">
+                            <div class="h-100 map-container" id="gmap_canvas">
+                                <!-- Google Maps Embed Goes Here -->
+                                <iframe width="100%" height="84%" frameborder="0" style="border: 0"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2278954856747!2d72.8793512148932!3d19.075310857045195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c63074d4ee43%3A0xf7634ce39d6871c9!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1646289722723!5m2!1sen!2sin"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 text-container">
+                            <div class="mb-4 text-#2D1E16 ">
+                                <p class="mb-2">45 BC, a Latin professor at Hampden-Sydney College in Virginia</p>
+                                <p class="mb-2"><span>Phone :</span> 234 9763423083</p>
+                                <p class="mb-2"><span>Email :</span> vivewgf016@gmail.com</p>
+                                <p class="mb-2"><span>Fax :</span> +91 91333323839</p>
+                            </div>
+
+                            <div class="bg-A07E55 p-8 ">
+                                <h3 class="text-#2D1E16 mb-4 font-normal">Want to Know More?? Drop Us a Mail</h3>
+
+                                <form action="">
+                                    <div class="flex mb-4">
+                                        <input class="w-1/2 mr-4 p-2 bg-white" type="text" placeholder="First Name">
+                                        <input class="w-1/2 p-2 bg-white" type="text" placeholder="Last Name">
+                                    </div>
+                                    <div class="flex mb-4">
+                                        <input class="w-1/2 mr-4 p-2 bg-white" type="email" placeholder="Email">
+                                        <input class="w-1/2 p-2 bg-white" type="text" placeholder="Contact Number">
+                                    </div>
+                                    <div class="mb-4">
+                                        <textarea class="w-full p-2 bg-white" name="textarea" cols="30"
+                                            placeholder="Your message here" rows="7"></textarea>
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <input class="p-2 bg-white text-black cursor-pointer" type="submit"
+                                            value="Send">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
+
             </div>
 
-            <div class="w-1/2 text-container">
-                <div class="mb-4 text-#2D1E16 ">
-                    <p class="mb-2">45 BC, a Latin professor at Hampden-Sydney College in Virginia</p>
-                    <p class="mb-2"><span>Phone :</span> 234 9763423083</p>
-                    <p class="mb-2"><span>Email :</span> vivewgf016@gmail.com</p>
-                    <p class="mb-2"><span>Fax :</span> +91 91333323839</p>
-                </div>
+            <!-- -----footer----- -->
 
-                <div class="bg-A07E55 p-8 ">
-                    <h3 class="text-#2D1E16 mb-4 font-normal">Want to Know More?? Drop Us a Mail</h3>
-
-                    <form action="">
-                        <div class="flex mb-4">
-                            <input class="w-1/2 mr-4 p-2 bg-white" type="text" placeholder="First Name">
-                            <input class="w-1/2 p-2 bg-white" type="text" placeholder="Last Name">
+            <div class="footer">
+                <footer class="footer-distributed">
+                    <div class="footer-left">
+                        <h3>Andhra<span> Dining</span></h3>
+                        <p class="footer-links">
+                            <a href="#" class="link-1">Home</a>
+                            <a href="#">Blog</a>
+                            <a href="#">Pricing</a>
+                            <a href="#">About</a>
+                            <a href="#">Faq</a>
+                            <a href="#">Contact</a>
+                        </p>
+                        <div class="flex flex-row justify-start items-start my-10 gap-10 text-black">
+                            <p>logo1</p>
+                            <p>logo2</p>
+                            <p>logo3</p>
                         </div>
-                        <div class="flex mb-4">
-                            <input class="w-1/2 mr-4 p-2 bg-white" type="email" placeholder="Email">
-                            <input class="w-1/2 p-2 bg-white" type="text" placeholder="Contact Number">
-                        </div>
-                        <div class="mb-4">
-                            <textarea class="w-full p-2 bg-white" name="textarea" cols="30"
-                                placeholder="Your message here" rows="7"></textarea>
-                        </div>
-                        <div class="flex justify-end">
-                            <input class="p-2 bg-white text-black cursor-pointer" type="submit" value="Send">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-</div>
-
-<!-- -----footer----- -->
-
-<div class="footer">
-    <footer class="footer-distributed">
-        <div class="footer-left">
-            <h3>Andhra<span> Dining</span></h3>
-            <p class="footer-links">
-                <a href="#" class="link-1">Home</a>
-                <a href="#">Blog</a>
-                <a href="#">Pricing</a>
-                <a href="#">About</a>
-                <a href="#">Faq</a>
-                <a href="#">Contact</a>
-            </p>
-            <div class="flex flex-row justify-start items-start my-10 gap-10 text-black">
-                <p>logo1</p>
-                <p>logo2</p>
-                <p>logo3</p>
-            </div>
-            <p class="footer-company-name">Andhra Dining © 2024</p>
-        </div>
-        <div class="footer-center">
-            <!-- <div>
+                        <p class="footer-company-name">Andhra Dining © 2024</p>
+                    </div>
+                    <div class="footer-center">
+                        <!-- <div>
        <i class="fas fa-map-marker-alt"></i>
         <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
       </div>
@@ -533,72 +675,74 @@
         <i class="fa fa-phone"></i>
         <p>+1.555.555.5555</p>
       </div> -->
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">support@company.com</a></p>
+                        <div>
+                            <i class="fa fa-envelope"></i>
+                            <p><a href="mailto:support@company.com">support@company.com</a></p>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <p class="footer-company-about">
+                            <span>About the company</span>
+                            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu
+                            auctor lacus
+                            vehicula sit amet.
+                        </p>
+                        <div class="footer-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </footer>
             </div>
-        </div>
-        <div class="footer-right">
-            <p class="footer-company-about">
-                <span>About the company</span>
-                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
-                vehicula sit amet.
-            </p>
-            <div class="footer-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </footer>
-</div>
 
 
- 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const boxes = document.querySelectorAll('.box');
 
-            window.addEventListener('scroll', checkBoxes);
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const boxes = document.querySelectorAll('.box');
 
-            function checkBoxes() {
-                const triggerBottom = (window.innerHeight / 5) * 4;
+                    window.addEventListener('scroll', checkBoxes);
 
-                boxes.forEach((box) => {
-                    const boxTop = box.getBoundingClientRect().top;
+                    function checkBoxes() {
+                        const triggerBottom = (window.innerHeight / 5) * 4;
 
-                    if (boxTop < triggerBottom) {
-                        box.classList.add('show');
-                    } else {
-                        box.classList.remove('show');
+                        boxes.forEach((box) => {
+                            const boxTop = box.getBoundingClientRect().top;
+
+                            if (boxTop < triggerBottom) {
+                                box.classList.add('show');
+                            } else {
+                                box.classList.remove('show');
+                            }
+                        });
                     }
+
+
+
+                    // Open modal function
+                    function openMenuModal() {
+                        document.getElementById('menuModal').classList.remove('hidden');
+                        document.body.classList.add('overflow-hidden');
+                    }
+
+                    // Close modal function
+                    function closeMenuModal() {
+                        document.getElementById('menuModal').classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                    }
+
+                    // Trigger modal on button click
+                    document.getElementById('viewMenuBtn').addEventListener('click', function (event) {
+                        event.preventDefault();
+                        openMenuModal();
+                    });
                 });
-            }
-    
 
-
-            // Open modal function
-            function openMenuModal() {
-                document.getElementById('menuModal').classList.remove('hidden');
-                document.body.classList.add('overflow-hidden');
-            }
-
-            // Close modal function
-            function closeMenuModal() {
-                document.getElementById('menuModal').classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
-            }
-
-            // Trigger modal on button click
-            document.getElementById('viewMenuBtn').addEventListener('click', function (event) {
-                event.preventDefault();
-                openMenuModal();
-            });
-        });
-
-    </script>
-    <script src="assets/js/script.js"></script>
+            </script>
+            <script src="assets/js/script.js"></script>
 
 </body>
+
 </html>
