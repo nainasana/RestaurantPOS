@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,6 +24,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-..................." crossorigin="anonymous" />
+
 
   <!-- 
     - custom css link
@@ -38,210 +43,586 @@
   <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
 
 </head>
-<body>
-        <div class="container">
+
+<body id="top">
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">ANDHRA DINING</p>
+  </div>
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <p style="font-size: 30px;">ANDHRA DINING</p>
+        <!-- <img src="./assets/images/logo.svg1" width="160" height="50" alt="AP - Home"> -->
+      </a>
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+        <!-- 
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home">
+        </a> -->
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover-underline active">
+              <div class="separator"></div>
+
+              <span class="span">Home</span>
+            </a>
+          </li>
+
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">About Us</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="branches.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Branches</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="ayurveda.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Ayurveda</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="gallery.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Gallery</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#contactus" class="navbar-link hover-underline z-0">
+              <div class="separator"></div>
+
+              <span class="span">Contact Us</span>
+            </a>
+          </li>
 
 
 
-     <!-- 
+        </ul>
+      </nav>
+
+      <a href="#" class="btn btn-secondary">
+        <span class="text text-1">Reservation</span>
+
+        <span class="text text-2" aria-hidden="true">Reservation</span>
+      </a>
+
+      <!-- <a href="#" class="menu-text">
+        <span class="text-3">Menu</span>
+      </a> -->
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero text-center" aria-label="home" id="home" class="banner-section">
+
+        <ul class="hero-slider" data-hero-slider>
+
+          <li class="slider-item active" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/images/menubanner.png" width="1880" height="950" alt="" class="img-cover">
+            </div>
+            <div class="">
+              <h1 class="display-1 hero-title slider-reveal" style="padding-top:180px;">
+                Explore our
+                Exhilarating Menu
+              </h1>
+              <a href="#" class="btn btn-secondary" style="border-color:whitesmoke">
+                <span class="text text-1">Order Now</span>
+
+                <span class="text text-2" aria-hidden="true">Order Now</span>
+              </a>
+
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+      <!-- 
         - #MENU
       -->
 
-    <section class="section menu" aria-label="menu-label" id="menu">
+      <section class="section menu" aria-label="menu-label" id="menu">
         <div class="container">
 
           <p class="section-subtitle text-center label-2">Special Selection</p>
 
-          <h2 class="headline-1 section-title text-center">Delicious Menu</h2>
+          <div class="text-center">
+            <h2 class="text-2xl mb-4">At The Madras Diaries, we create an atmosphere that takes you on a nostalgic ride
+              and offers
+              a culinary treat for all
+              the senses. Take a look at our meticulously prepared menu featuring must-try dishes and favourites from
+              the Indian
+              foodscape.</h2>
 
-          <ul class="grid-list">
+            <h1 class=" title-3-0 font-bold" style="margin:50px 10px 0px 10px">
+              ALLERGEN INFORMATION
+            </h1>
+            <div
+              class="grid lg:grid-cols-8 lg:grid-rows-1 grid-cols-4 grid-rows-2 place-items-center justify-center gap-40 mx-auto my-10"
+              style="width:550px">
+              <div class="text-center">
+                <img src="assets/images/egg.png" alt="Egg" class="img-small">
+                <p class="mt-2 text-md">Egg</p>
+              </div>
+              <div class="text-center">
+                <img src="assets/images/gluten.png" alt="Gluten" class="img-small">
+                <p class="mt-2 text-md">Gluten</p>
+              </div>
+              <div class="text-center">
+                <img src="assets/images/mustard.png" alt="Mustard" class="img-small">
+                <p class="mt-2 text-md">Mustard</p>
+              </div>
+              <div class="text-center">
+                <img src="assets/images/nuts.png" alt="Nuts" class="img-small">
+                <p class="mt-2 text-md">Nuts</p>
+              </div>
+              <div class="text-center">
+                <img src="assets/images/milk.png" alt="Milk" class="img-small">
+                <p class="mt-2 text-md">Milk</p>
+              </div>
+              <div class="text-center">
+                <img src="assets/images/crustaceans.png" alt="Crustaceans" class="img-small">
+                <p class="mt-2 text-md">Crustaceans</p>
+              </div>
+              <div class="text-center">
+                <img src="assets/images/fish.png" alt="Fish" class="img-small">
+                <p class="mt-2 text-md">Fish</p>
+              </div>
+              <div class="text-center">
+                <img src="assets/images/sesame.png" alt="Sesame" class="img-small">
+                <p class="mt-2 text-md">Sesame</p>
+              </div>
+            </div>
+            <span class="font-bold text-md" style="color:red">Note: If you have any allergens or intolerances, Please
+              speak to a
+              member of our team about requirements while placing
+              your order.</span>
 
-            <li>
-              <div class="menu-card hover:card">
+            <h1 class="title-3-0 font-bold" style="margin:50px 10px 0px 10px">
+              Soup
+            </h1>
+            <span class="text-md">Take your pick from our range of broth and soup, simmered to perfection in authentic
+              Indian
+              spices to uplift and elevate
+              the first course of your culinary journey.</span>
 
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-1.png" width="100" height="100" loading="lazy" alt="Greek Salad"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
+            <ul class="grid-list grid lg:grid-cols-2 gap-4 grid-cols-1">
+              <!-- Vegetarian Column -->
+              <li>
+                <h1 class="title-4-0 my-10" style="color:#008000">Vegetarian</h1>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-end items-center flex-row">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">MILAGU RASAM</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A great start to any meal or even had by itself, spiced broth simmered with coriander, cumin and a generous sprinkle of
+                    crushed peppercorns
+                  </p>
+                </div>
+            
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-between items-center">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">THAKKALI RASAM</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A simple yet delicious broth of tomato, with tartness from tamarind a subtle kick of chilli.
+                  </p>
+                </div>
+            
+              <!-- Non-Vegetarian Column -->
+              <li>
+                <h1 class="title-4-0 my-10" style="color:#FF0000">Non-Vegetarian</h1>
+                <div class="menu-card hover:card">
                   <div class="title-wrapper">
                     <h3 class="title-3">
-                      <a href="#" class="card-title">Greek Salad</a>
+                      <a href="#" class="card-title">KOZHI KURMILAGU CHAARU</a>
                     </h3>
-
-                    <span class="badge label-1">Seasonal</span>
-
-                    <span class="span title-2">$25.50</span>
+                    <span class="span title-0-2">€ 4.50</span>
                   </div>
-
                   <p class="card-text label-1">
-                    Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.
+                    Elevate your palate with fragrant chicken extract and a hint of freshly crushed black pepper.
                   </p>
-
                 </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-2.png" width="100" height="100" loading="lazy" alt="Lasagne"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
+            
+                <div class="menu-card hover:card">
                   <div class="title-wrapper">
                     <h3 class="title-3">
-                      <a href="#" class="card-title">Lasagne</a>
+                      <a href="#" class="card-title">NANDU RASAM</a>
                     </h3>
-
-                    <span class="span title-2">$40.00</span>
+                    <span class="span title-0-2">€ 4.50</span>
                   </div>
-
                   <p class="card-text label-1">
-                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices
+                    Sea crab simmered in tantalizingly spicy broth, packed with Indian herbs and spices.
                   </p>
-
                 </div>
+              </li>
+            </ul>
 
-              </div>
-            </li>
+            <h1 class="title-3-0 font-bold" style="margin:50px 10px 0px 10px">
+              Starters
+            </h1>
+            <span class="text-md">Transition to the main course with a plate of delicious appetizers, curated from the best of Indian cuisine and culture,
+            served with delicious dips.</span>
+            <ul class="grid-list grid lg:grid-cols-2 gap-4 grid-cols-1">
 
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-3.png" width="100" height="100" loading="lazy" alt="Butternut Pumpkin"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
+              <!-- Vegetarian Column -->
+              <li>
+                <h1 class="title-4-0 my-10" style="color:#008000">Vegetarian</h1>
+                <p class="card-text label-1" style="text-align:start">
+                  Kindly note that our dips and chutneys might contain some allergens. Do check with our team members while placing your
+                  order.
+                </p>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-end items-center flex-row">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">KEERAI VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    Crunchy fritters of fresh spinach, lentils and fennel fried to perfection.
+                  </p>
+                </div>
+            
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-between items-center">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">MEDU VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A delectable Indian savoury doughnut, crispy on the outside and pillowy soft on the inside.
+                  </p>
+                </div>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-end items-center flex-row">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">KEERAI VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    Crunchy fritters of fresh spinach, lentils and fennel fried to perfection.
+                  </p>
+                </div>
+            
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-between items-center">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">MEDU VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A delectable Indian savoury doughnut, crispy on the outside and pillowy soft on the inside.
+                  </p>
+                </div>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-end items-center flex-row">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">KEERAI VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    Crunchy fritters of fresh spinach, lentils and fennel fried to perfection.
+                  </p>
+                </div>
+            
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-between items-center">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">MEDU VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A delectable Indian savoury doughnut, crispy on the outside and pillowy soft on the inside.
+                  </p>
+                </div>
+                
+            
+              <!-- Non-Vegetarian Column -->
+              <li>
+                <h1 class="title-4-0 my-10" style="color:#FF0000">Non-Vegetarian</h1>
+                <p class="card-text label-1" style="text-align:start">
+                  Kindly note that our dips and chutneys might contain some allergens. Do check with our team members while placing your
+                  order.
+                </p>
+                <div class="menu-card hover:card">
                   <div class="title-wrapper">
                     <h3 class="title-3">
-                      <a href="#" class="card-title">Butternut Pumpkin</a>
+                      <a href="#" class="card-title">KOZHI MILAGU (BONELESS)</a>
                     </h3>
-
-                    <span class="span title-2">$10.00</span>
+                    <span class="span title-0-2">€ 4.50</span>
                   </div>
-
                   <p class="card-text label-1">
-                    Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.
+                    A peppery treat of boneless chicken tossed in crushed black pepper, fennel and aromats.
                   </p>
-
                 </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-4.png" width="100" height="100" loading="lazy" alt="Tokusen Wagyu"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
+            
+                <div class="menu-card hover:card">
                   <div class="title-wrapper">
                     <h3 class="title-3">
-                      <a href="#" class="card-title">Tokusen Wagyu</a>
+                      <a href="#" class="card-title">CHICKEN LOLLIPOP</a>
                     </h3>
-
-                    <span class="badge label-1">New</span>
-
-                    <span class="span title-2">$39.00</span>
+                    <span class="span title-0-2">€ 4.50</span>
                   </div>
-
                   <p class="card-text label-1">
-                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.
+                    Chicken wings, dressed and prepped in a spiced batter and deep-fried; a delightful dish for all ages.
                   </p>
-
                 </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-5.png" width="100" height="100" loading="lazy" alt="Olivas Rellenas"
-                    class="img-cover">
-                </figure>
 
                 <div>
-
-                  <div class="title-wrapper">
-                    <h3 class="title-3">
-                      <a href="#" class="card-title">Olivas Rellenas</a>
-                    </h3>
-
-                    <span class="span title-2">$25.00</span>
-                  </div>
-
-                  <p class="card-text label-1">
-                    Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper.
+                  <p class="card-text label-1" style="text-align:start">
+                    An array of our best, lip-smaking starters
                   </p>
-
+                  <img src="assets/images/images.jpg" alt="" style="width:100%; height:100%">
                 </div>
+              </li>
+            </ul>
 
-              </div>
-            </li>
 
-            <li>
-              <div class="menu-card hover:card">
+            <h1 class="title-3-0 font-bold" style="margin:50px 10px 0px 10px">
+              Tandoori Starters
+            </h1>
+            <span class="text-md">Our range of tandoor dishes come packed with deliciousness and a subtly smoky flavour for an authentic taste of the
+            celebrated Indian Tandoors.</span>
+            <ul class="grid-list grid lg:grid-cols-2 gap-4 grid-cols-1 gap-20">
 
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-6.png" width="100" height="100" loading="lazy" alt="Opu Fish"
-                    class="img-cover">
-                </figure>
-
+              <!-- Vegetarian Column -->
+              <li>
+                <h1 class="title-4-0 my-10" style="color:#008000">Vegetarian</h1>
+                <p class="card-text label-1" style="text-align:start">
+                  Kindly note that our dips and chutneys might contain some allergens. Do check with our team members while placing your
+                  order.
+                </p>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-end items-center flex-row">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">KEERAI VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    Crunchy fritters of fresh spinach, lentils and fennel fried to perfection.
+                  </p>
+                </div>
+            
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-between items-center">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">MEDU VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A delectable Indian savoury doughnut, crispy on the outside and pillowy soft on the inside.
+                  </p>
+                </div>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-end items-center flex-row">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">KEERAI VADAI</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    Crunchy fritters of fresh spinach, lentils and fennel fried to perfection.
+                  </p>
+                </div>
                 <div>
-
+                  <img src="assets/images/curry_3b.jpg" alt="" style="width:100%; height:100%">
+                </div>
+            
+                
+                
+            
+              <!-- Non-Vegetarian Column -->
+              <li>
+                <h1 class="title-4-0 my-10" style="color:#FF0000">Non-Vegetarian</h1>
+                <p class="card-text label-1" style="text-align:start">
+                  Kindly note that our dips and chutneys might contain some allergens. Do check with our team members while placing your
+                  order.
+                </p>
+                <div class="menu-card hover:card">
                   <div class="title-wrapper">
                     <h3 class="title-3">
-                      <a href="#" class="card-title">Opu Fish</a>
+                      <a href="#" class="card-title">KOZHI MILAGU (BONELESS)</a>
                     </h3>
-
-                    <span class="span title-2">$49.00</span>
+                    <span class="span title-0-2">€ 4.50</span>
                   </div>
-
                   <p class="card-text label-1">
-                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices
+                    A peppery treat of boneless chicken tossed in crushed black pepper, fennel and aromats.
                   </p>
-
                 </div>
+            
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">CHICKEN LOLLIPOP</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    Chicken wings, dressed and prepped in a spiced batter and deep-fried; a delightful dish for all ages.
+                  </p>
+                </div>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">KOZHI MILAGU (BONELESS)</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A peppery treat of boneless chicken tossed in crushed black pepper, fennel and aromats.
+                  </p>
+                </div>
+            
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">CHICKEN LOLLIPOP</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    Chicken wings, dressed and prepped in a spiced batter and deep-fried; a delightful dish for all ages.
+                  </p>
+                </div>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">KOZHI MILAGU (BONELESS)</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A peppery treat of boneless chicken tossed in crushed black pepper, fennel and aromats.
+                  </p>
+                </div>
+            
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">CHICKEN LOLLIPOP</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    Chicken wings, dressed and prepped in a spiced batter and deep-fried; a delightful dish for all ages.
+                  </p>
+                </div>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">KOZHI MILAGU (BONELESS)</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A peppery treat of boneless chicken tossed in crushed black pepper, fennel and aromats.
+                  </p>
+                </div>
+          
 
-              </div>
-            </li>
+                
+              </li>
+            </ul>
 
-          </ul>
 
-          <p class="menu-text text-center">
-            During winter daily from <span class="span">7:00 pm</span> to <span class="span">9:00 pm</span>
-          </p>
+            <h1 class="title-3-0 font-bold" style="margin:50px 10px 0px 10px">
+              Salads
+            </h1>
+            
+            <ul class="grid-list grid lg:grid-cols-2 gap-4 grid-cols-1 gap-20">
+              <li>
+                <div class="menu-card hover:card">
+                  <div class="title-wrapper flex justify-end items-center flex-row">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title">GREEN SALAD</a>
+                    </h3>
+                    <span class="span title-0-2">€ 4.50</span>
+                  </div>
+                  <p class="card-text label-1">
+                    A classic to accompany your delicious meal, farm fresh carrot, tomato, cucumber and onion on a bed of crunchy lettuce.
+                  </p>
+                </div>
+              </li>
+            </ul>
 
-          <a href="#" class="btn btn-primary">
-            <span class="text text-1">View All Menu</span>
+            <a href="#" class="btn btn-primary flex flex-row gap-4 justify-center items-center">
+              <span class="text text-1">Next</span><i class="fa-arrow-right fas button-icon-right" aria-hidden="true"></i>
 
-            <span class="text text-2" aria-hidden="true">View All Menu</span>
-          </a>
+              <span class="text text-2" aria-hidden="true">Next</span>
+            </a>
 
-        </div>
+          </div>
       </section>
       </div>
 
       <!-- 
         - #FEATURES
       -->
-    <!-- <section class="section features text-center" aria-label="features">
+      <!-- <section class="section features text-center" aria-label="features">
         <div class="container">
 
           <p class="section-subtitle label-2">Why Choose Us</p>
@@ -316,5 +697,7 @@
 
         </div>
       </section> -->
-
+      <script src="assets/js/script.js"></script>
 </body>
+
+</html>

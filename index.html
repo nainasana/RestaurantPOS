@@ -25,7 +25,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..................." crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-..................." crossorigin="anonymous" />
 
   <!-- 
     - custom css link
@@ -38,6 +39,257 @@
   <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
   <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
+
+  <style>
+    /* ---------philosophy-------  */
+
+
+    .box:nth-of-type(even) {
+      transform: translateX(-400%);
+    }
+
+    .box.show {
+      transform: translateX(0);
+    }
+
+    .box-with-para,
+    .box-with-html {
+      opacity: 0;
+      transform: translateX(400%);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      box-sizing: border-box;
+      object-fit: contain;
+      padding-right: 15px;
+    }
+
+    p {
+      line-height: 25px;
+    }
+
+    .box-with-para.show,
+    .box-with-html.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /**
+ * responsive for larger than 1400px screen
+ */
+
+    @media (min-width: 1400px) {
+      .order-flex-container {
+        display: flex;
+        width: 125%;
+      }
+
+      .file-body {
+        display: flex;
+        font-weight: 300;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px 0 10px;
+        gap: 100px;
+      }
+
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        transform: translateX(400%);
+        transition: transform 0.4s ease;
+        flex-grow: 1;
+        box-sizing: border-box;
+      }
+
+    }
+
+    /**
+ * responsive for larger than 992px screen
+ */
+
+    @media (min-width: 992px) {
+      .order-flex-container {
+        display: flex;
+        width: 100%;
+      }
+
+      .file-body {
+        display: flex;
+        font-weight: 300;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px 0 10px;
+        gap: 100px;
+      }
+
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        transform: translateX(400%);
+        transition: transform 0.4s ease;
+        flex-grow: 1;
+        box-sizing: border-box;
+      }
+
+      .review-img {
+        margin: auto;
+        border-radius: 100px;
+      }
+
+
+    }
+
+    @media (min-width: 1200px) {
+      .order-flex-container {
+        display: flex;
+        width: 125%;
+        padding: 50px;
+      }
+
+      .file-body {
+        display: flex;
+        font-weight: 300;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px 0 10px;
+        gap: 100px;
+      }
+
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        transform: translateX(400%);
+        transition: transform 0.4s ease;
+        flex-grow: 1;
+        box-sizing: border-box;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+
+      .review-img {
+        margin: auto;
+        border-radius: 100px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .order-flex-container {
+        width: 80%;
+      }
+
+      .file-body {
+        font-weight: 300;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px 0 10px;
+        gap: 100px;
+      }
+
+      .box {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        transform: translateX(400%);
+        transition: transform 0.4s ease;
+        flex-grow: 1;
+        box-sizing: border-box;
+      }
+
+      .box-with-para {
+        height: 100px;
+      }
+    }
+
+    @media only screen and (max-width: 375px) {
+      .review-img {
+        margin: auto;
+        border-radius: 100px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    @media only screen and (max-width: 425px) {
+      .order-flex-container {
+        width: 100%;
+      }
+
+      .box-with-html.show {
+        height: 100%;
+      }
+      .review-img {
+        margin: auto;
+        border-radius: 100px;
+        width: 100px;
+        height: 100px;
+      }
+      .section {
+        padding: 10px 15px 20px 15px;
+      }
+    }
+
+    @media only screen and (max-width: 320px) {
+      .order-flex-container {
+        width: 100%;
+      }
+
+      .box-with-html.show {
+        height: 100%;
+      }
+      .review-img {
+        margin: auto;
+        border-radius: 100px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+
+
+      .file-body {
+        display: flex;
+        font-weight: 300;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px 0 10px;
+        gap: 100px;
+      }
+
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        transform: translateX(400%);
+        transition: transform 0.4s ease;
+        flex-grow: 1;
+        box-sizing: border-box;
+      }
+
+    }
+  </style>
 
 </head>
 
@@ -69,7 +321,7 @@
         <button class="close-btn" aria-label="close menu" data-nav-toggler>
           <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
         </button>
-<!-- 
+        <!-- 
         <a href="#" class="logo">
           <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home">
         </a> -->
@@ -124,7 +376,7 @@
               <span class="span">Contact Us</span>
             </a>
           </li>
-          
+
 
 
         </ul>
@@ -220,7 +472,7 @@
         </button>
       </section>
 
- 
+
 
       <!-- 
         - #SERVICE
@@ -230,30 +482,39 @@
         <div class="container">
 
           <p class="section-subtitle-2 label-2-0">Andhra Dining</p>
+          <div class="file-body" style="margin-bottom:50px;">
 
-          <h2 class="headline-1 section-title">Philosophy</h2>
+            <div class="order-flex-container">
+              <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
+                @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
+                <img src="assets/images/offerings.png" alt="HTML Image">
+              </div>
+              <div class="box box-with-para flex flex-col items-center justify-center p-50"
+                style="text-align:justify; padding-top:50px;">
+                <h2 class="headline-1 section-title">Philosophy</h2>
+                <p class="">Welcome to Andhra Dining, where we bring the flavors of Andhra Pradesh to the heart of
+                  Tokyo! Our philosophy is simple yet profound: to introduce traditional and authentic
+                  Andhra food to Japan and take our guests on a voyage to the heart of India with every
+                  tantalizing bite. We meticulously source the finest ingredients, carefully selecting spices,
+                  produce, and meats to ensure that each dish embodies the true essence of Andhra cuisine.
+                  From the fragrant spices to the fiery flavors, every dish on our menu is a reflection of Andhra
+                  Pradesh’s diverse culinary landscape. In essence, our philosophy is about more than just
+                  food; it's about creating unforgettable moments, fostering connections, and sharing the
+                  vibrant spirit of India with each and every guest who walks through our doors.<br /><br />
+                  <span style="text-align:center">Andhra, born in Japan</span>
+                </p>
+              </div>
 
-          <p class="section-text">
-            Welcome to Andhra Dining, where we bring the flavors of Andhra Pradesh to the heart of
-            Tokyo! Our philosophy is simple yet profound: to introduce traditional and authentic
-            Andhra food to Japan and take our guests on a voyage to the heart of India with every
-            tantalizing bite. We meticulously source the finest ingredients, carefully selecting spices,
-            produce, and meats to ensure that each dish embodies the true essence of Andhra cuisine.
-            From the fragrant spices to the fiery flavors, every dish on our menu is a reflection of Andhra
-            Pradesh’s diverse culinary landscape. In essence, our philosophy is about more than just
-            food; it's about creating unforgettable moments, fostering connections, and sharing the
-            vibrant spirit of India with each and every guest who walks through our doors.<br/><br />
-            Andhra, born in Japan
-            
-          </p>
+            </div>
+          </div>
 
-          
+
 
         </div>
       </section>
 
 
-<!-- 
+      <!-- 
         - #News And Info 
       -->
 
@@ -271,17 +532,18 @@
               <div class="event-card has-before hover:shine">
 
                 <div class="card-banner img-holder1" style="--width: 350; --height: 350;">
-                  
+
 
                   <time class="publish-date label-2" datetime="2022-09-15">15/09/2022</time>
                 </div>
 
                 <div class="card-content">
-                  <p class="card-subtitle label-2 text-center">  Sari Purdue</p>
+                  <p class="card-subtitle label-2 text-center"> Sari Purdue</p>
 
                   <h3 class="card-title title-2-0 text-center">
-                
-                "Meals with my family are always extra special because of the beautiful plates I got from Custom & Nooke."
+
+                    "Meals with my family are always extra special because of the beautiful plates I got from Custom &
+                    Nooke."
                   </h3>
                 </div>
 
@@ -292,7 +554,7 @@
               <div class="event-card has-before hover:shine">
 
                 <div class="card-banner img-holder1" style="--width: 350; --height: 350;">
-                 
+
 
                   <time class="publish-date label-2" datetime="2022-09-08">08/09/2022</time>
                 </div>
@@ -301,7 +563,8 @@
                   <p class="card-subtitle label-2 text-center">Musa Watson</p>
 
                   <h3 class="card-title title-2-0 text-center">
-                    "Very pleased with my new sofa--the quality is great, it's comfortable, and elevates the look of my home."
+                    "Very pleased with my new sofa--the quality is great, it's comfortable, and elevates the look of my
+                    home."
                   </h3>
                 </div>
 
@@ -312,7 +575,7 @@
               <div class="event-card has-before hover:shine">
 
                 <div class="card-banner img-holder1" style="--width: 350; --height: 350;">
-                  
+
 
                   <time class="publish-date label-2" datetime="2022-09-03">03/09/2022</time>
                 </div>
@@ -321,9 +584,9 @@
                   <p class="card-subtitle label-2 text-center">Freya Moore</p>
 
                   <h3 class="card-title title-2-0 text-center">
-                    
-"I love how timeless my decor are. I just need to move things around to update the look of
-my space."
+
+                    "I love how timeless my decor are. I just need to move things around to update the look of
+                    my space."
                   </h3>
                 </div>
 
@@ -343,76 +606,75 @@ my space."
 
     </article>
   </main>
-    <!-- 
+  <!-- 
         - #end
       -->
 
-      <!-- 
+  <!-- 
         - #Reviews
       -->
 
-      <section class="section testi text-center has-bg-image"
-        style="background-image: url('./assets/images/reviewimg.jpg')" aria-label="testimonials">
-        <p class="section-subtitle label-2 text-center">Testimonials</p>
-        <div class="container">
-          <div class="reviews-text">
-            Reviews
-          </div><br />
-
-          
-
-          <p class="section-text-3">
-            
-            I wanted to thank you for inviting me down for that amazing dinner the other night. The food was
-            extraordinary.
-          </p>
-
-          <div class="wrapper">
-            <div class="separator"></div>
-            <div class="separator"></div>
-            <div class="separator"></div>
-          </div>
-
-          <div class="profile">
-            <img src="./assets/images/testi-avatar.jpg" width="100" height="100" loading="lazy" alt="Sam Jhonson"
-              class="img">
-
-            <p class="section-text-3">Sam Jhonson</p>
-          </div>
-
-        </div>
-      </section>
-
-
-          </div>
-
-        </div>
-        
-      </section>
+  <section class="section testi text-center has-bg-image" style="background-image: url('./assets/images/reviewimg.jpg')"
+    aria-label="testimonials">
+    <p class="section-subtitle label-2 text-center">Testimonials</p>
+    <div class="container">
+      <div class="reviews-text">
+        Reviews
+      </div><br />
 
 
 
-<div class="footer">
-  <footer class="footer-distributed">
-    <div class="footer-left">
-      <h3>Andhra<span> Dining</span></h3>
-      <p class="footer-links">
-        <a href="#" class="link-1">Home</a>
-        <a href="#">Blog</a>
-        <a href="#">Pricing</a>
-        <a href="#">About</a>
-        <a href="#">Faq</a>
-        <a href="#">Contact</a>
+      <p class="section-text-3">
+
+        I wanted to thank you for inviting me down for that amazing dinner the other night. The food was
+        extraordinary.
       </p>
-      <div class="flex flex-row justify-start items-start my-10 gap-10 text-black">
-    <p>logo1</p>
-    <p>logo2</p>
-    <p>logo3</p>
-</div>
-      <p class="footer-company-name">Andhra Dining © 2024</p>
+
+      <div class="wrapper">
+        <div class="separator"></div>
+        <div class="separator"></div>
+        <div class="separator"></div>
+      </div>
+
+      <div class="profile">
+        <img src="./assets/images/testi-avatar.jpg" width="100" height="100" loading="lazy" alt="Sam Jhonson"
+          class="review-img">
+        <p class=" section-text-3">Sam Jhonson</p>
+      </div>
+
     </div>
-    <div class="footer-center">
-    <!-- <div>
+  </section>
+
+
+  </div>
+
+  </div>
+
+  </section>
+
+
+
+  <div class="footer">
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <h3>Andhra<span> Dining</span></h3>
+        <p class="footer-links">
+          <a href="#" class="link-1">Home</a>
+          <a href="#">Blog</a>
+          <a href="#">Pricing</a>
+          <a href="#">About</a>
+          <a href="#">Faq</a>
+          <a href="#">Contact</a>
+        </p>
+        <div class="flex flex-row justify-start items-start my-10 gap-10 text-black">
+          <p>logo1</p>
+          <p>logo2</p>
+          <p>logo3</p>
+        </div>
+        <p class="footer-company-name">Andhra Dining © 2024</p>
+      </div>
+      <div class="footer-center">
+        <!-- <div>
        <i class="fas fa-map-marker-alt"></i>
         <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
       </div>
@@ -420,25 +682,26 @@ my space."
         <i class="fa fa-phone"></i>
         <p>+1.555.555.5555</p>
       </div> -->
-      <div>
-        <i class="fa fa-envelope"></i>
-        <p><a href="mailto:support@company.com">support@company.com</a></p>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">support@company.com</a></p>
+        </div>
       </div>
-    </div>
-    <div class="footer-right">
-      <p class="footer-company-about">
-        <span>About the company</span>
-        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-      </p>
-      <div class="footer-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the company</span>
+          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+          vehicula sit amet.
+        </p>
+        <div class="footer-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
       </div>
-    </div>
-  </footer>
-</div>
+    </footer>
+  </div>
 
 
 
@@ -453,6 +716,28 @@ my space."
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const boxes = document.querySelectorAll('.box');
+
+      window.addEventListener('scroll', checkBoxes);
+
+      function checkBoxes() {
+        const triggerBottom = (window.innerHeight / 5) * 4;
+
+        boxes.forEach((box) => {
+          const boxTop = box.getBoundingClientRect().top;
+
+          if (boxTop < triggerBottom) {
+            box.classList.add('show');
+          } else {
+            box.classList.remove('show');
+          }
+        });
+      }
+    });
+
+  </script>
 </body>
 
 </html>

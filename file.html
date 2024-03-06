@@ -3,190 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>animate on scroll</title>
-    <style>
-        .file-body {
-            display: flex;
-            font-weight: 300;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            overflow-x: hidden;
-        }
 
-        h1 {
-            margin: 10px;
-        }
+    <!-- 
+    - primary meta tags
+  -->
+    <title>Andhra Dining</title>
+    <meta name="title" content="Andhra Dining">
+    <meta name="description" content="Thisis a website showing Andhra food">
 
-        .box {
-            background-color: white;
-            border: 2px solid #3b3b3b;
-            color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 400px;
-            height: 200px;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
-            transform: translateX(400%);
-            transition: transform 0.4s ease;
-        }
+    <!-- 
+    - favicon
+  -->
+    <!-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
 
-        .box:nth-of-type(even) {
-            transform: translateX(-400%);
-        }
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-..................." crossorigin="anonymous" />
 
-        .box.show {
-            transform: translateX(0);
-        }
 
-        .box h2 {
-            font-size: 22px;
-            font-weight: 400;
-        }
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
-        .flex-container {
-            display: flex;
-        }
+    <!-- 
+    - preload images
+  -->
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
+    <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
 
-        .box-with-para,
-        .box-with-html {
-            width: 50%;
-            opacity: 0;
-            transform: translateX(400%);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        .box-with-para.show,
-        .box-with-html.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    </style>
 </head>
 
-<body class="file-body">
-    <h1>kjdvn</h1>
-    <br><br>
+<body id="top">
 
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
-    <div class="flex-container">
-        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <p>This is a paragraph.</p>
-        </div>
-        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-            <h2>HTML</h2>
-        </div>
-    </div>
+    <!-- 
+    - #PRELOADER
+  -->
 
-    
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const boxes = document.querySelectorAll('.box');
-
-            window.addEventListener('scroll', checkBoxes);
-
-            function checkBoxes() {
-                const triggerBottom = (window.innerHeight / 5) * 4;
-
-                boxes.forEach((box) => {
-                    const boxTop = box.getBoundingClientRect().top;
-
-                    if (boxTop < triggerBottom) {
-                        box.classList.add('show');
-                    } else {
-                        box.classList.remove('show');
-                    }
-                });
-            }
-        });
-    </script>
-</body>
-
-</html>
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text">ANDHRA DINING</p>
+    </div>
+    </body>
+    </html>

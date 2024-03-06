@@ -44,9 +44,16 @@
     <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
     <style>
+
+        body.modal-open {
+            overflow: hidden;
+        }
         .bg-A07E55 {
             background-color: #E7E5DC;
             /* Additional styles go here */
+        }
+        .hidden {
+            display: none;
         }
     
         .map-container,
@@ -62,7 +69,6 @@
             justify-content: center;
             margin: 0;
             overflow-x: hidden;
-            gap:100px;
         }
         .box {
             display: flex;
@@ -86,6 +92,7 @@
         }
         .order-flex-container {
             display: flex;
+            gap:100px;
         }
 
         .box-with-para,
@@ -94,12 +101,11 @@
             opacity: 0;
             transform: translateX(400%);
             transition: opacity 0.4s ease, transform 0.4s ease;
-        
             box-sizing: border-box;
             object-fit: cover;
-            width: 300px; /* Set a fixed width */
-      height: 250px; /* Set a fixed height */
-      overflow: hidden; /
+            width: 500px; 
+            height: 450px;
+            overflow: hidden; 
         }
 
         .box-with-para.show,
@@ -107,6 +113,21 @@
             opacity: 1;
             transform: translateX(0);
         }
+        .banner-section {
+            display: none;
+        }
+        .modal-container {
+            top:13%;
+
+    }
+    .modal-container.hidden {
+  display: none;
+}
+
+    /* Style to hide the scrollbar on the body when the modal is open */
+    body.modal-open {
+        overflow: hidden;
+    }
         
     </style>
 
@@ -189,7 +210,7 @@
                     </li>
 
                     <li class="navbar-item">
-                        <a href="#contactus" class="navbar-link hover-underline">
+                        <a href="#contactus" class="navbar-link hover-underline z-0">
                             <div class="separator"></div>
 
                             <span class="span">Contact Us</span>
@@ -229,7 +250,7 @@
         - #HERO
       -->
 
-            <section class="hero text-center" aria-label="home" id="home">
+            <section class="hero text-center" aria-label="home" id="home" class="banner-section">
             
                 <ul class="hero-slider" data-hero-slider>
             
@@ -249,19 +270,19 @@
                 </ul>
             </section>
 
-            <section class="text-center mb-20">
+            <section class="text-center my-20">
                 <h1 class="section-subtitle-2 label-2-0">Popular</h1>
                 <h2 class="headline-1 section-title">Our Specialities</h2>
             </section>
 
-            <div class="file-body">
+            <div class="file-body" style="margin-bottom:50px;">
 
                 <div class="order-flex-container">
                     <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
                         @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
                         <img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg"  alt="HTML Image">
                     </div>
-                    <div class="flex flex-col items-start justify-start">
+                    <div class="box box-with-para flex flex-col items-start justify-center">
                         <h2 class="headline-1 section-title">Tandoori</h2>
                         <p class="" style="width:300px">A small description of Tandoori and why it is our specialty. and any if any TV features
                             we can add
@@ -297,7 +318,130 @@
                         <img src="assets/images/Hyderbadi-Chicken-Biryani-scaled.jpg" alt="HTML Image">
                     </div>
                 </div>
+                
+                <a href="menu.html" class="btn btn-primary">
+                    <span class="text text-1" style="color: black">View Menu</span>
+                    <span class="text text-2" aria-hidden="true">View Menu</span>
+                </a>
 
+
+<!-- --------- Modal --------------  -->
+                <!-- <div class="fixed inset-0 overflow-y-auto hidden modal-container" id="menuModal">
+                    <div class="flex items-center justify-center min-h-screen mt-800px pt-500px">
+                        <div class="bg-white p-8 w-full max-w-7xl mx-auto overflow-y-auto rounded-lg shadow-lg" style="background-color:#E7E5DC">
+                            
+                            <button class="text-5xl rounded-full text-black" style="color:black; padding-bottom:10px;" onclick="closeMenuModal()">
+                                &times;
+                            </button>
+                           
+                            <div class="text-center">
+                                <h2 class="text-2xl mb-4">At The Madras Diaries, we create an atmosphere that takes you on a nostalgic ride and offers a culinary treat for all
+                                the senses. Take a look at our meticulously prepared menu featuring must-try dishes and favourites from the Indian
+                                foodscape.</h2>
+
+                                <h1 class="text-4xl font-bold" style="margin:50px 10px 50px 10px">
+                                    ALLERGEN INFORMATION
+                                </h1>
+                                <div class="grid lg:grid-cols-8 lg:grid-rows-1 grid-cols-4 grid-rows-2 place-items-center justify-center gap-10 mx-auto my-10" style="width:550px">
+                                <img src="assets/images/egg.png" alt="">
+                                <img src="assets/images/gluten.png" alt="">
+                                <img src="assets/images/mustard.png" alt="">
+                                <img src="assets/images/nuts.png" alt="">
+                                <img src="assets/images/milk.png" alt="">
+                                <img src="assets/images/crustaceans.png" alt="">
+                                <img src="assets/images/fish.png" alt="">
+                                <img src="assets/images/sesame.png" alt="">
+                                </div>
+                                <span class="font-bold text-md" style="color:red">Note: If you have any allergens or intolerances, Please speak to a member of our team about requirements while placing
+                                your order.</span>
+                
+                                
+
+                                
+                                    <h1 class="text-4xl font-bold" style="margin:50px 10px 50px 10px">
+                                        Soup
+                                    </h1>
+                                    <span class="text-md">Take your pick from our range of broth and soup, simmered to perfection in authentic Indian spices to uplift and elevate
+                                    the first course of your culinary journey.</span>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="grid grid-cols-1 gap-10">
+                                    <div class="mb-4 text-2xl my-10">
+                                        Vegetarian
+                                    </div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-10">
+                                    <div class="mb-4 text-2xl">
+                                        Non-Vegetarian
+                                    </div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                </div>
+                                    
+                                    
+                
+                                  
+                                </div>
+                                    <h1 class="text-4xl font-bold" style="margin:50px 10px 50px 10px">
+                                        Soup
+                                    </h1>
+                                    <span class="text-md">Take your pick from our range of broth and soup, simmered to perfection in authentic Indian spices to uplift and elevate
+                                    the first course of your culinary journey.</span>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="grid grid-cols-1 gap-10">
+                                    <div class="mb-4 text-2xl my-10">
+                                        Vegetarian
+                                    </div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-10">
+                                    <div class="mb-4 text-2xl">
+                                        Non-Vegetarian
+                                    </div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                </div>
+                                    
+                                    
+                
+                                </div>
+                                    <h1 class="text-4xl font-bold" style="margin:50px 10px 50px 10px">
+                                        Soup
+                                    </h1>
+                                    <span class="text-md">Take your pick from our range of broth and soup, simmered to perfection in authentic Indian spices to uplift and elevate
+                                    the first course of your culinary journey.</span>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="grid grid-cols-1 gap-10">
+                                    <div class="mb-4 text-2xl my-10">
+                                        Vegetarian
+                                    </div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-10">
+                                    <div class="mb-4 text-2xl">
+                                        Non-Vegetarian
+                                    </div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                        <div><h1>hi</h1><p>hello</p></div>
+                                </div>
+                                    
+                                    
+                
+                                   
+                                </div>
+                
+                                </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                
 
                 
             </div>
@@ -431,7 +575,28 @@
                     }
                 });
             }
+    
+
+
+            // Open modal function
+            function openMenuModal() {
+                document.getElementById('menuModal').classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            // Close modal function
+            function closeMenuModal() {
+                document.getElementById('menuModal').classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            // Trigger modal on button click
+            document.getElementById('viewMenuBtn').addEventListener('click', function (event) {
+                event.preventDefault();
+                openMenuModal();
+            });
         });
+
     </script>
     <script src="assets/js/script.js"></script>
 
