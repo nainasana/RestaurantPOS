@@ -36,6 +36,7 @@
     - custom css link
   -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/b1gallery.css" />
 
     <!-- 
     - preload images
@@ -44,6 +45,137 @@
     <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
     <style>
+        .address a {
+            color: #A07E55;
+            font-family: var(--fontFamily-dm_sans);
+            font-weight: bold;
+            font-size: medium;
+            line-height: 20px;
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            padding: 20px 0 20px 0;
+        }
+
+        .contact a {
+            color: #A07E55;
+            font-family: var(--fontFamily-dm_sans);
+            font-weight: bold;
+            font-size: medium;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .banner {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/banner-img.jpg") center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 320px) {
+            #dynamicSectionsContainer {
+                margin-top: 100px;
+
+            }
+
+        }
+
+
+
+        .center-button {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: 500px 500px;
+        }
+
+        .card-img {
+            background: url("assets/images/4.jpg") center/cover no-repeat;
+        }
+
+        .banner h2 {
+            padding-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            text-align: center;
+            color: #000;
+            font-family: var(--fontFamily-dm_sans);
+            font-size: x-large;
+            margin: 20px 0 20px 0;
+        }
+
+        .card-content {
+            background: #fff;
+            height: 330px;
+        }
+
+        .card-content h3 {
+            text-align: center;
+            color: #000;
+            padding: 20px 0 10px 0;
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        .form-row {
+            display: flex;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        form select,
+        form input {
+            display: block;
+            width: 100%;
+            margin: 15px 12px;
+            padding: 5px;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            border: none;
+            font-weight: 300;
+        }
+
+        .timings {
+            text-align: center;
+        }
+
+        form input[type=text],
+        form input[type=number],
+        form input::placeholder,
+        select {
+            color: #9a9a9a;
+        }
+
+
+
+        form input[type=submit]:hover {
+            opacity: 0.9;
+        }
+
+        @media(max-width: 992px) {
+            .card-container {
+                grid-template-columns: 100%;
+                width: 100vw;
+            }
+
+            .card-img {
+                height: 330px;
+            }
+        }
+
         body.modal-open {
             overflow: hidden;
         }
@@ -59,7 +191,7 @@
 
         .map-container,
         .text-container {
-            height: 550px;
+            height: 400px;
             /* Set the desired height */
         }
 
@@ -207,6 +339,7 @@
                 display: none;
             }
         }
+
         @media (min-width: 1024px) {
             .file-body {
                 display: flex;
@@ -266,6 +399,80 @@
 
             .banner-section {
                 display: none;
+            }
+        }
+
+
+
+        /* Unique Hero Section Styles */
+        .hero-section {
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('assets/images/unique-bg.jpg');
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Adjust the overlay color and opacity */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: #fff;
+            /* Adjust the text color */
+        }
+
+        .hero-title {
+            font-size: var(--fontSize-display-1);
+            margin-bottom: 60px;
+            font-family: var(--fontFamily-forum);
+        }
+
+        /* Unique Menu Button Styles */
+        .unique-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            /* Adjust the button text color */
+            /* Adjust the button background color */
+            border: 2px solid #fff;
+            /* Adjust the button border color */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .unique-btn:hover {
+            background-color: #000;
+            /* Adjust the button background color on hover */
+            color: #fff;
+            /* Adjust the button text color on hover */
+        }
+
+
+
+        /* Responsive Styles (Add your media queries here) */
+        @media screen and (max-width: 768px) {
+
+            /* Adjust styles for smaller screens */
+            .unique-hero-title {
+                font-size: 24px;
+            }
+
+            .unique-btn {
+                font-size: 16px;
             }
         }
     </style>
@@ -348,14 +555,6 @@
                         </a>
                     </li>
 
-                    <li class="navbar-item">
-                        <a href="#contactus" class="navbar-link hover-underline z-0">
-                            <div class="separator"></div>
-
-                            <span class="span">Contact Us</span>
-                        </a>
-                    </li>
-
 
 
                 </ul>
@@ -409,193 +608,184 @@
                 </ul>
             </section>
 
-            <section class="text-center my-20">
+            <section class="text-center py-20" style="background-color:#E7E5DC">
                 <h1 class="section-subtitle-2 label-2-0">Popular</h1>
                 <h2 class="headline-1 section-title">Our Specialities</h2>
-            </section>
 
-            <div class="file-body" style="margin-bottom:50px;">
 
-                <div class="order-flex-container h-50">
-                    <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-                        @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-                        <img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg" alt="HTML Image">
-                    </div>
-                    <div class="box box-with-para flex flex-col items-start justify-center">
-                        <h2 class="headline-1 section-title">Tandoori</h2>
-                        <p class="">A small description of Tandoori and why it is our specialty. and
-                            any if any TV features
-                            we can add
-                            it here</p>
-                        <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
-                            <span class="text text-1" style="color:black">Order </span>
+                <div class="file-body" style="margin-bottom:50px;">
 
-                            <span class="text text-2" aria-hidden="true">Order</span>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="order-flex-container">
-                    <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-                        @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-                        <div class="flex flex-col items-center justify-center">
-                            <h2 class="headline-1 section-title mx-auto">Biryani</h2>
-                            <p class="">A small description of Biryani and why it is our specialty.
-                                and any if any TV
-                                features we can add
+                    <div class="order-flex-container h-50">
+                        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
+                            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
+                            <img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg" alt="HTML Image">
+                        </div>
+                        <div class="box box-with-para flex flex-col items-start justify-center">
+                            <h2 class="headline-1 section-title">Tandoori</h2>
+                            <p class="">A small description of Tandoori and why it is our specialty. and
+                                any if any TV features
+                                we can add
                                 it here</p>
                             <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
                                 <span class="text text-1" style="color:black">Order </span>
 
                                 <span class="text text-2" aria-hidden="true">Order</span>
                             </a>
+                        </div>
 
+                    </div>
+
+                    <div class="order-flex-container">
+                        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
+                            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
+                            <div class="flex flex-col items-center justify-center">
+                                <h2 class="headline-1 section-title mx-auto">Biryani</h2>
+                                <p class="">A small description of Biryani and why it is our specialty.
+                                    and any if any TV
+                                    features we can add
+                                    it here</p>
+                                <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
+                                    <span class="text text-1" style="color:black">Order </span>
+
+                                    <span class="text text-2" aria-hidden="true">Order</span>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
+                            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
+
+                            <img src="assets/images/Hyderbadi-Chicken-Biryani-scaled.jpg" alt="HTML Image">
                         </div>
                     </div>
-                    <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-                        @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
+            </section>
 
-                        <img src="assets/images/Hyderbadi-Chicken-Biryani-scaled.jpg" alt="HTML Image">
+            </div>
+            <section class="hero-section unique-hero-section">
+                <div class="hero-overlay unique-hero-overlay">
+                    <div class="hero-content unique-hero-content">
+                        <h2 class="hero-title unique-hero-title">À La Carte</h2>
+                        <section class="menu-section unique-menu-section">
+                            <a href="menu.html" class="btn btn-primary unique-btn">
+                                <span class="text text-1">View Menu</span>
+                                <span class="text text-2" aria-hidden="true">View Menu</span>
+                            </a>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+<!-- ------------- Gallery ----------  -->
+
+<section>
+    <div class="light-box-section"  style="padding:50px 0 50px 0">
+        <h1 class="section-subtitle-2 label-2-0 text-center">Our Gallery</h1>
+        <h2 class="headline-1 section-title text-center">Gallery</h2>
+
+        <div class="lightBox">
+            <div class="lightBox_content">
+                <i class="fas fa-times close"></i>
+                <div class="logo_icons">
+                </div>
+                <div class="showImg">
+                    <div class="image">
+                        <img src="images/img1.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-container">
+                <div class="image-box">
+                    <img class="gImg" src="assets/images/1.jpg" alt="" />
+                    <div class="logo_icons">
+                        <a href="#">
+                            <div class="text_content">
+                                <span class="name">Ginza</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="image-box">
+                    <img class="gImg" src="assets/images/2.jpg" alt="" />
+                    <div class="logo_icons">
+                        <a href="#">
+
+                            <div class="text_content">
+                                <span class="name">Ginza</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="image-box">
+                    <img class="gImg" src="assets/images/3.jpg" alt="" />
+                    <div class="logo_icons">
+                        <a href="#">
+
+                            <div class="text_content">
+                                <span class="name">Ginza</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="image-box">
+                    <img class="gImg" src="assets/images/4.jpg" alt="" />
+                    <div class="logo_icons">
+                        <a href="#">
+
+                            <div class="text_content">
+                                <span class="name">Ginza</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="image-box">
+                    <img class="gImg" src="assets/images/5.jpg" alt="" />
+                    <div class="logo_icons">
+                        <a href="#">
+
+                            <div class="text_content">
+                                <span class="name">Ginza</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="image-box">
+                    <img class="gImg" src="assets/images/6.jpg" alt="" />
+                    <div class="logo_icons">
+                        <a href="#">
+
+                            <div class="text_content">
+                                <span class="name">Ginza</span>
+                            </div>
+                        </a>
+
                     </div>
                 </div>
 
-                <a href="menu.html" class="btn btn-primary mx-auto my-10">
-                    <span class="text text-1" style="color: black">View Menu</span>
-                    <span class="text text-2" aria-hidden="true">View Menu</span>
-                </a>
-
-
-                <!-- --------- Modal --------------  -->
-                <!-- <div class="fixed inset-0 overflow-y-auto hidden modal-container" id="menuModal">
-                    <div class="flex items-center justify-center min-h-screen mt-800px pt-500px">
-                        <div class="bg-white p-8 w-full max-w-7xl mx-auto overflow-y-auto rounded-lg shadow-lg" style="background-color:#E7E5DC">
-                            
-                            <button class="text-5xl rounded-full text-black" style="color:black; padding-bottom:10px;" onclick="closeMenuModal()">
-                                &times;
-                            </button>
-                           
-                            <div class="text-center">
-                                <h2 class="text-2xl mb-4">At The Madras Diaries, we create an atmosphere that takes you on a nostalgic ride and offers a culinary treat for all
-                                the senses. Take a look at our meticulously prepared menu featuring must-try dishes and favourites from the Indian
-                                foodscape.</h2>
-
-                                <h1 class="text-4xl font-bold" style="margin:50px 10px 50px 10px">
-                                    ALLERGEN INFORMATION
-                                </h1>
-                                <div class="grid lg:grid-cols-8 lg:grid-rows-1 grid-cols-4 grid-rows-2 place-items-center justify-center gap-10 mx-auto my-10" style="width:550px">
-                                <img src="assets/images/egg.png" alt="">
-                                <img src="assets/images/gluten.png" alt="">
-                                <img src="assets/images/mustard.png" alt="">
-                                <img src="assets/images/nuts.png" alt="">
-                                <img src="assets/images/milk.png" alt="">
-                                <img src="assets/images/crustaceans.png" alt="">
-                                <img src="assets/images/fish.png" alt="">
-                                <img src="assets/images/sesame.png" alt="">
-                                </div>
-                                <span class="font-bold text-md" style="color:red">Note: If you have any allergens or intolerances, Please speak to a member of our team about requirements while placing
-                                your order.</span>
-                
-                                
-
-                                
-                                    <h1 class="text-4xl font-bold" style="margin:50px 10px 50px 10px">
-                                        Soup
-                                    </h1>
-                                    <span class="text-md">Take your pick from our range of broth and soup, simmered to perfection in authentic Indian spices to uplift and elevate
-                                    the first course of your culinary journey.</span>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="grid grid-cols-1 gap-10">
-                                    <div class="mb-4 text-2xl my-10">
-                                        Vegetarian
-                                    </div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                </div>
-
-                                <div class="grid grid-cols-1 gap-10">
-                                    <div class="mb-4 text-2xl">
-                                        Non-Vegetarian
-                                    </div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                </div>
-                                    
-                                    
-                
-                                  
-                                </div>
-                                    <h1 class="text-4xl font-bold" style="margin:50px 10px 50px 10px">
-                                        Soup
-                                    </h1>
-                                    <span class="text-md">Take your pick from our range of broth and soup, simmered to perfection in authentic Indian spices to uplift and elevate
-                                    the first course of your culinary journey.</span>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="grid grid-cols-1 gap-10">
-                                    <div class="mb-4 text-2xl my-10">
-                                        Vegetarian
-                                    </div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                </div>
-
-                                <div class="grid grid-cols-1 gap-10">
-                                    <div class="mb-4 text-2xl">
-                                        Non-Vegetarian
-                                    </div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                </div>
-                                    
-                                    
-                
-                                </div>
-                                    <h1 class="text-4xl font-bold" style="margin:50px 10px 50px 10px">
-                                        Soup
-                                    </h1>
-                                    <span class="text-md">Take your pick from our range of broth and soup, simmered to perfection in authentic Indian spices to uplift and elevate
-                                    the first course of your culinary journey.</span>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="grid grid-cols-1 gap-10">
-                                    <div class="mb-4 text-2xl my-10">
-                                        Vegetarian
-                                    </div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                </div>
-
-                                <div class="grid grid-cols-1 gap-10">
-                                    <div class="mb-4 text-2xl">
-                                        Non-Vegetarian
-                                    </div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                        <div><h1>hi</h1><p>hello</p></div>
-                                </div>
-                                    
-                                    
-                
-                                   
-                                </div>
-                
-                                </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
-
-
             </div>
+        </div>
+    </div>
+</section>
+
+
+
 
             <!-- ------- contact form -------  -->
 
-            <div class="bg-white text-gray-800 text-xl">
+            <div class="bg-white text-gray-800 text-xl" style="background:#E7E5DC">
 
                 <div class="container mx-auto p-8">
 
-                    <section class="text-center mb-20">
+                    <section class="text-center my-20">
                         <h1 class="section-subtitle-2 label-2-0">Contact Us</h1>
-                        <h2 class="headline-1 section-title">Reach Us Anytime</h2>
+
                     </section>
 
                     <section class="flex justify-between items-start">
@@ -608,77 +798,79 @@
                             </div>
                         </div>
 
-                        <div class="w-1/2 text-container">
-                            <div class="mb-4 text-#2D1E16 ">
-                                <p class="mb-2">45 BC, a Latin professor at Hampden-Sydney College in Virginia</p>
-                                <p class="mb-2"><span>Phone :</span> 234 9763423083</p>
-                                <p class="mb-2"><span>Email :</span> vivewgf016@gmail.com</p>
-                                <p class="mb-2"><span>Fax :</span> +91 91333323839</p>
-                            </div>
-
-                            <div class="bg-A07E55 p-8 ">
-                                <h3 class="text-#2D1E16 mb-4 font-normal">Want to Know More?? Drop Us a Mail</h3>
-
-                                <form action="">
-                                    <div class="flex mb-4">
-                                        <input class="w-1/2 mr-4 p-2 bg-white" type="text" placeholder="First Name">
-                                        <input class="w-1/2 p-2 bg-white" type="text" placeholder="Last Name">
-                                    </div>
-                                    <div class="flex mb-4">
-                                        <input class="w-1/2 mr-4 p-2 bg-white" type="email" placeholder="Email">
-                                        <input class="w-1/2 p-2 bg-white" type="text" placeholder="Contact Number">
-                                    </div>
-                                    <div class="mb-4">
-                                        <textarea class="w-full p-2 bg-white" name="textarea" cols="30"
-                                            placeholder="Your message here" rows="7"></textarea>
-                                    </div>
-                                    <div class="flex justify-end">
-                                        <input class="p-2 bg-white text-black cursor-pointer" type="submit"
-                                            value="Send">
-                                    </div>
-                                </form>
+                        <div class="w-1/2 text-container text-center">
+                            <h2 class="headline-1 section-title">Location</h2>
+                            <div class="address">
+                                <a href="#" class="location-link">
+                                    <p>104-0061 Tokyo, Chuo CIty, Ginza, 1 Chome-8-2, Ginza Premier Building 2F (56
+                                        seats)</p>
+                                </a><br />
+                                <a href="#" class="location-link">
+                                    <p>2 minutes walk from exit 7 of Ginza 1-chrome station on the Yurakucho line</p>
+                                    <p>2 minutes walk from exit 1 of Kyobashi station on the Ginza line</p>
+                                </a>
                             </div>
                         </div>
+
+
+
                     </section>
+                    <div class="contact grid grid-cols-2 place-items-start justify-center mx-auto text-start">
+                        <h2 class="headline-1 section-title">Business Hours</h2>
+                        <a href="#" class="contact-link">
+                            <p>Weekdays - 11:15AM - 2:30PM, 5:00PM - 9:00PM</p><br />
+                            <p>Weekends - 11:30AM - 2:30PM, 5:00PM - 9:00PM</p>
+                        </a>
+                    </div>
+
+                    <div class="contact grid grid-cols-2 place-items-start my-10 justify-center text-start">
+                        <h2 class="headline-1 section-title">Contact Us</h2>
+                        <a href="#" class="contact-link">
+                            <p>TEL - 03-3567-4005</p>
+                            <br />
+                            <p>andhradining@gmail.com</p>
+                        </a>
+                    </div>
 
                 </div>
 
             </div>
 
+            <div id="dynamicSectionsContainer"></div>
+
+            
             <!-- -----footer----- -->
 
             <div class="footer">
                 <footer class="footer-distributed">
-                    <div class="footer-left">
-                        <h3>Andhra<span> Dining</span></h3>
+                    <div class="footer-left flex">
+                        <h3>Andhra Dining</h3>
                         <p class="footer-links">
-                            <a href="#" class="link-1">Home</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Pricing</a>
-                            <a href="#">About</a>
-                            <a href="#">Faq</a>
-                            <a href="#">Contact</a>
+                            <a href="index.html" class="link-1">Home</a>
+                            <a href="about.html">About Us</a>
+                            <a href="branches.html">Branches</a>
+                            <a href="ayurveda.html">Ayurveda</a>
+                            <a href="gallery.html">Gallery</a>
                         </p>
-                        <div class="flex flex-row justify-start items-start my-10 gap-10 text-black">
-                            <p>logo1</p>
-                            <p>logo2</p>
-                            <p>logo3</p>
+                        <div class="flex flex-row justify-start items-start my-5 gap-10">
+                            <div
+                                class="flex flex-row flex-wrap gap-5 items-center justify-start text-2xl mx-auto lg:mx-1">
+                                <i class="fa fa-envelope"></i>
+                                <p class="text-#A07E55"><a href="mailto:support@company.com">support@company.com</a></p>
+                            </div>
                         </div>
                         <p class="footer-company-name">Andhra Dining © 2024</p>
                     </div>
                     <div class="footer-center">
                         <!-- <div>
-       <i class="fas fa-map-marker-alt"></i>
-        <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-      </div>
-      <div>
-        <i class="fa fa-phone"></i>
-        <p>+1.555.555.5555</p>
-      </div> -->
-                        <div>
-                            <i class="fa fa-envelope"></i>
-                            <p><a href="mailto:support@company.com">support@company.com</a></p>
-                        </div>
+                             <i class="fas fa-map-marker-alt"></i>
+                              <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+                            </div>
+                            <div>
+                              <i class="fa fa-phone"></i>
+                              <p>+1.555.555.5555</p>
+                            </div> -->
+
                     </div>
                     <div class="footer-right">
                         <p class="footer-company-about">
@@ -693,6 +885,7 @@
                             <a href="#"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-github"></i></a>
                         </div>
+
                     </div>
                 </footer>
             </div>
@@ -740,8 +933,133 @@
                     });
                 });
 
+                // Function to create a dynamic reservation form section
+                function createReservationSection(title) {
+                    if (title !== "GINZA") {
+                        return null; // Return null for titles other than "GINZA"
+                    }
+
+                    const section = document.createElement("section");
+                    section.className = "banner";
+
+                    const h1 = document.createElement("h1");
+                    h1.textContent = `BOOK YOUR TABLE NOW AT ${title}`;
+                    h1.style.margin = "10px 0 20px 0";
+                    h1.style.fontSize = "var(--fontSize-title-1)";
+
+                    const cardContainer = document.createElement("div");
+                    cardContainer.className = "card-container";
+
+                    const cardImg = document.createElement("div");
+                    cardImg.className = "card-img";
+
+                    // You can set the background image for cardImg here
+
+                    const cardContent = document.createElement("div");
+                    cardContent.className = "card-content";
+
+                    const tag = document.createElement("h1");
+                    tag.textContent = "Reservation";
+                    tag.className = "tag";
+                    tag.style.textAlign = "center";
+                    tag.style.color = "#000";
+                    tag.style.fontFamily = "var(--fontFamily-dm_sans)";
+                    tag.style.fontSize = "larger";
+
+                    const timings = document.createElement("p");
+                    timings.className = "mx-auto timings";
+                    timings.style.color = "#A07E55";
+                    timings.style.fontSize = "small";
+                    timings.style.fontWeight = "bold";
+                    timings.textContent = "Timings: open at 2am closes at 5pm";
+
+                    const reservationForm = document.createElement("form");
+
+                    // Add form elements dynamically
+                    reservationForm.innerHTML = `
+                        <div class="form-row">
+                            <select name="days">
+                                <option value="day-select">Select Day</option>
+                                <option value="sunday">Sunday</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                            </select>
+
+                            <select name="hours">
+                                <option value="hour-select">Select Hour</option>
+                                <option value="10">10: 00</option>
+                                <option value="12">12: 00</option>
+                                <option value="14">14: 00</option>
+                                <option value="16">16: 00</option>
+                                <option value="18">18: 00</option>
+                                <option value="20">20: 00</option>
+                                <option value="22">22: 00</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <input type="text" placeholder="Full Name">
+                                <input type="text" placeholder="Phone Number">
+                                    <input type="email" placeholder="Email"> <!-- Added email input -->
+                                    </div>
+
+                                    <div class="form-row">
+                                        <input type="number" placeholder="How Many Persons?" min="1">
+                                            <div class="btn btn-primary" style="
+                                        width:100%;
+                                        color: black;
+                                        height:100%;
+                                        font-family: var(--fontFamily-dm_sans);
+                                        padding: 6px 20px;
+                                        margin-top: 13px;
+                                        letter-spacing: 1px;
+                                    ">
+                                                <span class="text text-1">Book Table</span>
+                                                <span class="text text-2" aria-hidden="true">Book Table</span>
+                                            </div>
+                                    </div>
+    `;
+
+                    // Add event listener to form inputs for changing text color
+                    reservationForm.querySelectorAll('input, select').forEach((input) => {
+                        input.addEventListener('input', () => {
+                            input.style.color = "black";
+                        });
+                    });
+
+                    // Append elements to the container
+                    cardContent.appendChild(tag);
+                    cardContent.appendChild(timings);
+                    cardContent.appendChild(reservationForm);
+                    cardContainer.appendChild(cardImg);
+                    cardContainer.appendChild(cardContent);
+                    section.appendChild(h1);
+                    section.appendChild(cardContainer);
+
+                    return section;
+                }
+
+                // Create dynamic reservation sections based on titles
+                const reservationTitles = ["GINZA", "SHIBUYA", "DAIMON", "OKACHIMACHI", "KOMATSUGAWA"];
+
+                const dynamicSectionsContainer = document.getElementById("dynamicSectionsContainer");
+
+                reservationTitles.forEach((title) => {
+                    const reservationSection = createReservationSection(title);
+                    if (reservationSection) {
+                        dynamicSectionsContainer.appendChild(reservationSection);
+                    }
+                });
+
+
+
             </script>
             <script src="assets/js/script.js"></script>
+            <script src="assets/js/b1gallery.js"></script>
 
 </body>
 

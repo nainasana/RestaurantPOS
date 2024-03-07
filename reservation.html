@@ -1,131 +1,439 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reservation</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Andhra Dining</title>
+  <meta name="title" content="Andhra Dining">
+  <meta name="description" content="This is a website showing Andhra food">
+
+  <!-- 
+    - favicon
+  -->
+  <!-- <link rel="shortcut icon" href="./fav.svg" type="image/svg+xml"> -->
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-..................." crossorigin="anonymous" />
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
+
 </head>
-<body>
-    <section class="reservation" style="background-color: #E7E5DC;padding: 10px;">
-        <div id="contactus" class="container">
+<style>
+  .banner {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/banner-img.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 20px;
+  }
+ @media (max-width: 320px) {
+    #dynamicSectionsContainer {
+      margin-top: 100px;
 
-          <div class="form reservation-form bg-black-10-1">
+  }
+    
+  }
 
-            <form action="" class="form-left">
+  
 
-              <h2 class="headline-10-1 text-center">Online Reservation</h2>
+  .center-button {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
 
-              <p class="form-text text-center">
-                Booking request <a href="tel:+88123123456" class="link">+88-123-123456</a>
-                or fill out the order form
-              </p>
+  .card-container {
+    display: grid;
+    grid-template-columns: 500px 500px;
+  }
 
-              <div class="input-wrapper">
-                <input type="text" name="name" placeholder="Your Name" autocomplete="off" class="input-field">
+  .card-img {
+    background: url("assets/images/4.jpg") center/cover no-repeat;
+  }
 
-                <input type="tel" name="phone" placeholder="Phone Number" autocomplete="off" class="input-field">
-              </div>
+  .banner h2 {
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+  }
+  .tag {
+    text-align: center;
+    color: #000;
+    font-family: var(--fontFamily-dm_sans);
+    font-size:x-large;
+    margin: 20px 0 20px 0;
+  }
 
-              <div class="input-wrapper">
+  .card-content {
+    background: #fff;
+    height: 330px;
+  }
 
-                <div class="icon-wrapper">
-                  <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+  .card-content h3 {
+    text-align: center;
+    color: #000;
+    padding: 20px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+  }
 
-                  <select name="person" class="input-field">
-                    <option value="1-person">1 Person</option>
-                    <option value="2-person">2 Person</option>
-                    <option value="3-person">3 Person</option>
-                    <option value="4-person">4 Person</option>
-                    <option value="5-person">5 Person</option>
-                    <option value="6-person">6 Person</option>
-                    <option value="7-person">7 Person</option>
-                  </select>
+  .form-row {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+  }
 
-                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                </div>
+  form select,
+  form input {
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    font-weight: 300;
+  }
 
-                <div class="icon-wrapper">
-                  <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
+  .timings {
+    text-align: center;
+  }
 
-                  <input type="date" name="reservation-date" class="input-field">
-
-                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                </div>
-
-                <div class="icon-wrapper">
-                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
-
-                  <select name="person" class="input-field">
-                    <option value="08:00am">08 : 00 am</option>
-                    <option value="09:00am">09 : 00 am</option>
-                    <option value="010:00am">10 : 00 am</option>
-                    <option value="011:00am">11 : 00 am</option>
-                    <option value="012:00am">12 : 00 am</option>
-                    <option value="01:00pm">01 : 00 pm</option>
-                    <option value="02:00pm">02 : 00 pm</option>
-                    <option value="03:00pm">03 : 00 pm</option>
-                    <option value="04:00pm">04 : 00 pm</option>
-                    <option value="05:00pm">05 : 00 pm</option>
-                    <option value="06:00pm">06 : 00 pm</option>
-                    <option value="07:00pm">07 : 00 pm</option>
-                    <option value="08:00pm">08 : 00 pm</option>
-                    <option value="09:00pm">09 : 00 pm</option>
-                    <option value="10:00pm">10 : 00 pm</option>
-                  </select>
-
-                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                </div>
-
-              </div>
-
-              <textarea name="message" placeholder="Message" autocomplete="off" class="input-field"></textarea>
-
-              <button type="submit" class="btn btn-secondary-2">
-                <span class="text text-1">Book A Table</span>
-
-                <span class="text text-2" aria-hidden="true">Book A Table</span>
-              </button>
-
-            </form>
+  form input[type=text],
+  form input[type=number],
+  form input::placeholder,
+  select {
+    color: #9a9a9a;
+  }
 
 
-                  
-        - #Contact us
-      -->
-      
 
-            <!-- <div class="form-right text-center" style="background-image: url('./assets/images/form-pattern.png')">
+  form input[type=submit]:hover {
+    opacity: 0.9;
+  }
 
-              <h2 class="headline-10-1 text-center">Contact Us</h2>
+  @media(max-width: 992px) {
+    .card-container {
+      grid-template-columns: 100%;
+      width: 100vw;
+    }
 
-              <p class="contact-label">Booking Request</p>
+    .card-img {
+      height: 330px;
+    }
+  }
+</style>
 
-              <a href="tel:+88123123456" class="body-1 contact-number hover-underline">+88-123-123456</a>
+<body id="top">
 
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">ANDHRA DINING</p>
+  </div>
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <p style="font-size: 30px;font-family: Biospace;">ANDHRA DINING</p>
+        <!-- <img src="./assets/images/logo.svg1" width="160" height="50" alt="AP - Home"> -->
+      </a>
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+        <!-- 
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home">
+        </a> -->
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover-underline active">
               <div class="separator"></div>
 
-              <p class="contact-label">Location</p>
+              <span class="span">Home</span>
+            </a>
+          </li>
 
-              <address class="body-4">
-                Lorpem jasoljr fnkalm <br>
-                iknfckjsdv kjdsnc
-              </address>
 
-              <p class="contact-label">Lunch Time</p>
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
 
-              <p class="body-4">
-                Monday to Sunday <br>
-                11.00 am - 2.30pm
-              </p>
+              <span class="span">About Us</span>
+            </a>
+          </li>
 
-              <p class="contact-label">Dinner Time</p>
+          <li class="navbar-item">
+            <a href="branches.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
 
-              <p class="body-4">
-                Monday to Sunday <br>
-                05.00 pm - 10.00pm
-              </p>
+              <span class="span">Branches</span>
+            </a>
+          </li>
 
+          <li class="navbar-item">
+            <a href="ayurveda.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Ayurveda</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="gallery.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Gallery</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#contactus" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Contact Us</span>
+            </a>
+          </li>
+
+
+
+        </ul>
+      </nav>
+
+      <a href="reservation.html" class="btn btn-secondary">
+        <span class="text text-1">Reservation</span>
+
+        <span class="text text-2" aria-hidden="true">Reservation</span>
+      </a>
+
+      <!-- <a href="menu.html" class="menu-text">
+        <span class="text-3">Menu</span>
+      </a> -->
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+<div id="dynamicSectionsContainer"></div>
+
+<div class="footer">
+  <footer class="footer-distributed">
+    <div class="footer-left flex">
+      <h3>Andhra Dining</h3>
+      <p class="footer-links">
+        <a href="index.html" class="link-1">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="branches.html">Branches</a>
+        <a href="ayurveda.html">Ayurveda</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact us</a>
+      </p>
+      <div class="flex flex-row justify-start items-start my-5 gap-10">
+        <div class="flex flex-row flex-wrap gap-5 items-center justify-start text-2xl mx-auto lg:mx-1">
+          <i class="fa fa-envelope"></i>
+          <p class="text-#A07E55"><a href="mailto:support@company.com">support@company.com</a></p>
+        </div>
+      </div>
+      <p class="footer-company-name">Andhra Dining © 2024</p>
+    </div>
+    <div class="footer-center">
+      <!-- <div>
+       <i class="fas fa-map-marker-alt"></i>
+        <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+1.555.555.5555</p>
+      </div> -->
+
+    </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+        vehicula sit amet.
+      </p>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+
+    </div>
+  </footer>
+</div>
+
+  
+
+
+<script>
+  // Function to create a dynamic reservation form section
+  function createReservationSection(title) {
+    const section = document.createElement("section");
+    section.className = "banner";
+
+    const h1 = document.createElement("h1");
+    h1.textContent = `BOOK YOUR TABLE NOW AT ${title}`;
+    h1.style.margin = "10px 0 20px 0";
+    h1.style.fontSize = "var(--fontSize-title-1)";
+
+    const cardContainer = document.createElement("div");
+    cardContainer.className = "card-container";
+
+    const cardImg = document.createElement("div");
+    cardImg.className = "card-img";
+
+    // You can set the background image for cardImg here
+
+    const cardContent = document.createElement("div");
+    cardContent.className = "card-content";
+
+    const tag = document.createElement("h1");
+    tag.textContent = "Reservation";
+    tag.className = "tag";
+    tag.style.textAlign = "center";
+    tag.style.color = "#000";
+    tag.style.fontFamily = "var(--fontFamily-dm_sans)";
+    tag.style.fontSize = "larger";
+
+    const timings = document.createElement("p");
+    timings.className = "mx-auto timings";
+    timings.style.color = "#A07E55";
+    timings.style.fontSize = "small";
+    timings.style.fontWeight = "bold";
+    timings.textContent = "Timings: open at 2am closes at 5pm";
+
+    const reservationForm = document.createElement("form");
+
+    // Add form elements dynamically
+    reservationForm.innerHTML = `
+        <div class="form-row">
+            <select name="days">
+                <option value="day-select">Select Day</option>
+                <option value="sunday">Sunday</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+            </select>
+
+            <select name="hours">
+                <option value="hour-select">Select Hour</option>
+                <option value="10">10: 00</option>
+                <option value="12">12: 00</option>
+                <option value="14">14: 00</option>
+                <option value="16">16: 00</option>
+                <option value="18">18: 00</option>
+                <option value="20">20: 00</option>
+                <option value="22">22: 00</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="Phone Number">
+            <input type="email" placeholder="Email"> <!-- Added email input -->
+        </div>
+
+        <div class="form-row">
+            <input type="number" placeholder="How Many Persons?" min="1">
+            <div class="btn btn-primary" style="
+                                        width:100%;
+                                        color: black;
+                                        height:100%;
+                                        font-family: var(--fontFamily-dm_sans);
+                                        padding: 6px 20px;
+                                        margin-top: 13px;
+                                        letter-spacing: 1px;
+                                    ">
+                <span class="text text-1">Book Table</span>
+                <span class="text text-2" aria-hidden="true">Book Table</span>
             </div>
+        </div>
+    `;
+
+    // Add event listener to form inputs for changing text color
+    reservationForm.querySelectorAll('input, select').forEach((input) => {
+      input.addEventListener('input', () => {
+        input.style.color = "black";
+      });
+    });
+
+    // Append elements to the container
+    cardContent.appendChild(tag);
+    cardContent.appendChild(timings);
+    cardContent.appendChild(reservationForm);
+    cardContainer.appendChild(cardImg);
+    cardContainer.appendChild(cardContent);
+    section.appendChild(h1);
+    section.appendChild(cardContainer);
+
+    return section;
+  }
+
+  // Create dynamic reservation sections based on titles
+  const reservationTitles = ["GINZA", "SHIBUYA", "DAIMON", "OKACHIMACHI", "KOMATSUGAWA"];
+
+  const dynamicSectionsContainer = document.getElementById("dynamicSectionsContainer");
+
+  reservationTitles.forEach((title) => {
+    const reservationSection = createReservationSection(title);
+    dynamicSectionsContainer.appendChild(reservationSection);
+  });
+</script>
+
+
+  <script src="assets/js/script.js"></script>
 </body>
-</html>-->
+
+</html>
