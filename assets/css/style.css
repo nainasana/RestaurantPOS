@@ -1022,13 +1022,13 @@ body.nav-active {
 }
 
 .navbar-list {
-  border-block-end: 1px solid var(--white-alpha-20);
   margin-block-end: 100px;
+  text-align:center;
 }
 
-.navbar-item {
+/* .navbar-item {
   border-block-start: 1px solid var(--white-alpha-20);
-}
+} */
 
 .navbar-link {
   position: relative;
@@ -1036,7 +1036,7 @@ body.nav-active {
   text-transform: uppercase;
   padding-block: 10px;
   max-width: unset;
-  color: var(--white);
+  color:whitesmoke;
 }
 
 .navbar-list::after {
@@ -1055,7 +1055,7 @@ body.nav-active {
 
 .navbar-link:is(:hover, :focus-visible, .active) .span {
   color: #A07E55;
-  transform: translateX(20px);
+  /* transform: translateX(20px); */
 }
 
 .navbar-link:is(:focus-visible) .span {

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- 
     - primary meta tags
@@ -41,9 +42,129 @@
   <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
 
   <style>
+    :root {
+      --yellow: #FFBD13;
+      --blue: #4383FF;
+      --blue-d-1: #3278FF;
+      --light: #F5F5F5;
+      --grey: #AAA;
+      --white: #FFF;
+      --shadow: 8px 8px 30px rgba(0, 0, 0, .05);
+    }
+
+    .feedback {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .feedback-wrapper {
+      background: var(--white);
+      padding: 2rem;
+      max-width: 576px;
+      width: 100%;
+      border-radius: .75rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .feedback-wrapper h3 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-gap: .5rem;
+      font-size: 2rem;
+      color: var(--yellow);
+      margin-bottom: 2rem;
+    }
+
+    .rating .star {
+      cursor: pointer;
+    }
+
+    .rating .star.active {
+      opacity: 0;
+      animation: animate .5s calc(var(--i) * .1s) ease-in-out forwards;
+    }
+
+    @keyframes animate {
+      0% {
+        opacity: 0;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+
+    .rating .star:hover {
+      transform: scale(1.1);
+    }
+
+    textarea {
+      width: 100%;
+      background: var(--light);
+      padding: 1rem;
+      border-radius: .5rem;
+      border: none;
+      outline: none;
+      resize: none;
+      margin-bottom: .5rem;
+    }
+
+    .butn-group {
+      display: flex;
+      grid-gap: .5rem;
+      align-items: center;
+    }
+
+    .butn-group .butn {
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-family: var(--fontFamily-dm_sans);
+    }
+
+    .butn-group .butn.submit {
+      color: black;
+      transition: border 0.3s, transform 0.3s;
+    }
+
+    .butn-group .butn.submit:hover {
+      background: #E7E5DC;
+      transform: scale(1.05);
+    }
+
+    .butn-group .butn.cancel {
+      background: var(--white);
+      color: var(--blue);
+    }
+
+    .butn-group .butn.cancel:hover {
+      background: #E7E5DC;
+      transform: scale(1.05);
+    }
+
     /* ---------philosophy-------  */
-
-
     .box:nth-of-type(even) {
       transform: translateX(-400%);
     }
@@ -235,12 +356,14 @@
       .box-with-html.show {
         height: 100%;
       }
+
       .review-img {
         margin: auto;
         border-radius: 100px;
         width: 100px;
         height: 100px;
       }
+
       .section {
         padding: 25px 0px 25px 0px;
       }
@@ -254,6 +377,7 @@
       .box-with-html.show {
         height: 100%;
       }
+
       .review-img {
         margin: auto;
         border-radius: 100px;
@@ -287,7 +411,6 @@
         flex-grow: 1;
         box-sizing: border-box;
       }
-
     }
   </style>
 
@@ -311,10 +434,8 @@
 
   <header class="header" data-header>
     <div class="container">
-
       <a href="#" class="logo">
         <p style="font-size: 30px;font-family: Biospace;">ANDHRA DINING</p>
-        <!-- <img src="./assets/images/logo.svg1" width="160" height="50" alt="AP - Home"> -->
       </a>
       <nav class="navbar" data-navbar>
 
@@ -331,11 +452,9 @@
             </a>
           </li>
 
-
           <li class="navbar-item">
             <a href="about.html" class="navbar-link hover-underline">
               <div class="separator"></div>
-
               <span class="span">About Us</span>
             </a>
           </li>
@@ -343,7 +462,6 @@
           <li class="navbar-item">
             <a href="branches.html" class="navbar-link hover-underline">
               <div class="separator"></div>
-
               <span class="span">Branches</span>
             </a>
           </li>
@@ -351,7 +469,6 @@
           <li class="navbar-item">
             <a href="ayurveda.html" class="navbar-link hover-underline">
               <div class="separator"></div>
-
               <span class="span">Ayurveda</span>
             </a>
           </li>
@@ -359,24 +476,16 @@
           <li class="navbar-item">
             <a href="gallery.html" class="navbar-link hover-underline">
               <div class="separator"></div>
-
               <span class="span">Gallery</span>
             </a>
           </li>
-
-
         </ul>
       </nav>
 
       <a href="reservation.html" class="btn btn-secondary">
         <span class="text text-1">Reservation</span>
-
         <span class="text text-2" aria-hidden="true">Reservation</span>
       </a>
-
-      <!-- <a href="menu.html" class="menu-text">
-        <span class="text-3">Menu</span>
-      </a> -->
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <span class="line line-1"></span>
@@ -385,7 +494,6 @@
       </button>
 
       <div class="overlay" data-nav-toggler data-overlay></div>
-
     </div>
   </header>
 
@@ -398,55 +506,39 @@
       -->
 
       <section class="hero text-center" aria-label="home" id="home">
-
         <ul class="hero-slider" data-hero-slider>
-
           <li class="slider-item active" data-hero-slider-item>
-
             <div class="slider-bg">
               <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt="" class="img-cover">
             </div>
-
             <p class="label-2 section-subtitle slider-reveal">Tradational & Hygine</p>
-
             <h1 class="display-1 hero-title slider-reveal">
               For the love of <br>
               delicious food
             </h1>
-
           </li>
 
           <li class="slider-item" data-hero-slider-item>
-
             <div class="slider-bg">
               <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt="" class="img-cover">
             </div>
-
             <p class="label-2 section-subtitle slider-reveal">delightful experience</p>
-
             <h1 class="display-1 hero-title slider-reveal">
               Flavors Inspired by <br>
               the Seasons
             </h1>
-
           </li>
 
           <li class="slider-item" data-hero-slider-item>
-
             <div class="slider-bg">
               <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt="" class="img-cover">
             </div>
-
             <p class="label-2 section-subtitle slider-reveal">amazing & delicious</p>
-
             <h1 class="display-1 hero-title slider-reveal">
               Where every flavor <br>
               tells a story
             </h1>
-
-
           </li>
-
         </ul>
 
         <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
@@ -456,6 +548,7 @@
         <button class="slider-btn next" aria-label="slide to next" data-next-btn>
           <ion-icon name="chevron-forward"></ion-icon>
         </button>
+
       </section>
 
 
@@ -464,12 +557,10 @@
         - #SERVICE
       -->
 
-      <section class="section service text-center" aria-label="service">
+      <section class="section service text-center" aria-label="service" style="padding: 100px 0 100px 0;">
         <div class="container">
-
           <p class="section-subtitle-2 label-2-0">Andhra Dining</p>
           <div class="file-body" style="margin-bottom:50px;">
-
             <div class="order-flex-container">
               <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
                 @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
@@ -490,12 +581,8 @@
                   <span style="text-align:center">Andhra, born in Japan</span>
                 </p>
               </div>
-
             </div>
           </div>
-
-
-
         </div>
       </section>
 
@@ -503,93 +590,64 @@
       <!-- 
         - #News And Info 
       -->
-
-
-      <section class="section event bg-black-10-1" aria-label="event">
+      <section class="section event bg-black-10-1" aria-label="event" style="padding: 100px 0 100px 0;">
         <div class="container">
-
           <p class="section-subtitle-2 label-2-0 text-center">Recent Updates</p>
-
           <h2 class="section-title headline-2-0 text-center">News and Info</h2>
 
           <ul class="grid-list mx-10">
-
             <li>
               <div class="event-card has-before hover:shine">
-
                 <div class="card-banner img-holder1" style="--width: 350; --height: 350;">
-
-
                   <time class="publish-date label-2" datetime="2022-09-15">15/09/2022</time>
                 </div>
-
                 <div class="card-content">
                   <p class="card-subtitle label-2 text-center"> Sari Purdue</p>
-
                   <h3 class="card-title title-2-0 text-center">
-
                     "Meals with my family are always extra special because of the beautiful plates I got from Custom &
                     Nooke."
                   </h3>
                 </div>
-
               </div>
             </li>
 
             <li>
               <div class="event-card has-before hover:shine">
-
                 <div class="card-banner img-holder1" style="--width: 350; --height: 350;">
-
-
                   <time class="publish-date label-2" datetime="2022-09-08">08/09/2022</time>
                 </div>
-
                 <div class="card-content">
                   <p class="card-subtitle label-2 text-center">Musa Watson</p>
-
                   <h3 class="card-title title-2-0 text-center">
                     "Very pleased with my new sofa--the quality is great, it's comfortable, and elevates the look of my
                     home."
                   </h3>
                 </div>
-
               </div>
             </li>
 
             <li>
               <div class="event-card has-before hover:shine">
-
                 <div class="card-banner img-holder1" style="--width: 350; --height: 350;">
-
-
                   <time class="publish-date label-2" datetime="2022-09-03">03/09/2022</time>
                 </div>
-
                 <div class="card-content">
                   <p class="card-subtitle label-2 text-center">Freya Moore</p>
-
                   <h3 class="card-title title-2-0 text-center">
-
                     "I love how timeless my decor are. I just need to move things around to update the look of
                     my space."
                   </h3>
                 </div>
-
               </div>
             </li>
 
           </ul>
-
           <a href="#" class="btn btn-primary">
             <span class="text text-1">Explore More </span>
-
             <span class="text text-2" aria-hidden="true">Explore More</span>
           </a>
-
         </div>
       </section>
-
     </article>
   </main>
   <!-- 
@@ -599,19 +657,14 @@
   <!-- 
         - #Reviews
       -->
-
-  <section class="section testi text-center has-bg-image" style="background-image: url('./assets/images/reviewimg.jpg')"
-    aria-label="testimonials">
+  <section class="section testi text-center has-bg-image"
+    style="background-image: url('./assets/images/reviewimg.jpg'); padding: 100px 0 100px 0;" aria-label="testimonials">
     <p class="section-subtitle label-2 text-center">Testimonials</p>
     <div class="container">
       <div class="reviews-text">
         Reviews
       </div><br />
-
-
-
       <p class="section-text-3">
-
         I wanted to thank you for inviting me down for that amazing dinner the other night. The food was
         extraordinary.
       </p>
@@ -627,40 +680,54 @@
           class="review-img">
         <p class=" section-text-3">Sam Jhonson</p>
       </div>
+    </div>
+    <div class="feedback">
 
+      <div class="feedback-wrapper">
+        <h3>Give us your Feedback.</h3>
+        <form action="#">
+          <div class="rating">
+            <input type="number" name="rating" hidden>
+            <i class='bx bx-star star' style="--i: 0;"></i>
+            <i class='bx bx-star star' style="--i: 1;"></i>
+            <i class='bx bx-star star' style="--i: 2;"></i>
+            <i class='bx bx-star star' style="--i: 3;"></i>
+            <i class='bx bx-star star' style="--i: 4;"></i>
+          </div>
+          <textarea name="opinion" cols="30" rows="5" placeholder="Your opinion..."></textarea>
+          <div class="butn-group">
+            <button type="submit" class="butn butn submit">Submit</button>
+            <button class="butn cancel">Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
 
-  </div>
 
-  </div>
-
-  </section>
-
-
-
-<div class="footer">
-  <footer class="footer-distributed">
-    <div class="footer-left flex">
-      <h3>Andhra Dining</h3>
-      <p class="footer-links">
-        <a href="index.html" class="link-1">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="branches.html">Branches</a>
-        <a href="ayurveda.html">Ayurveda</a>
-        <a href="gallery.html">Gallery</a>
-      </p>
-      <div class="flex flex-row justify-start items-start my-5 gap-10">
-      <div class="flex flex-row flex-wrap gap-5 items-center justify-start text-2xl mx-auto lg:mx-1">
-        <i class="fa fa-envelope"></i>
-        <p class="text-#A07E55"><a href="mailto:support@company.com">support@company.com</a></p>
+  <!-- ------------ footer ----------  -->
+  <div class="footer">
+    <footer class="footer-distributed">
+      <div class="footer-left flex">
+        <h3>Andhra Dining</h3>
+        <p class="footer-links">
+          <a href="index.html" class="link-1">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="branches.html">Branches</a>
+          <a href="ayurveda.html">Ayurveda</a>
+          <a href="gallery.html">Gallery</a>
+        </p>
+        <div class="flex flex-row justify-start items-start my-5 gap-10">
+          <div class="flex flex-row flex-wrap gap-5 items-center justify-start text-2xl mx-auto lg:mx-1">
+            <i class="fa fa-envelope"></i>
+            <p class="text-#A07E55"><a href="mailto:support@company.com">support@company.com</a></p>
+          </div>
+        </div>
+        <p class="footer-company-name">Andhra Dining © 2024</p>
       </div>
-      </div>
-      <p class="footer-company-name">Andhra Dining © 2024</p>
-    </div>
-    <div class="footer-center">
-      <!-- <div>
+      <div class="footer-center">
+        <!-- <div>
        <i class="fas fa-map-marker-alt"></i>
         <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
       </div>
@@ -668,23 +735,21 @@
         <i class="fa fa-phone"></i>
         <p>+1.555.555.5555</p>
       </div> -->
-
-    </div>
-    <div class="footer-right">
-      <p class="footer-company-about">
-        <span>About the company</span>
-        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
-        vehicula sit amet.
-      </p>
-      <div class="footer-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
       </div>
-      
-    </div>
-  </footer>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the company</span>
+          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+          vehicula sit amet.
+        </p>
+        <div class="footer-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </footer>
   </div>
 
 
@@ -721,7 +786,31 @@
       }
     });
 
+    const allStar = document.querySelectorAll('.rating .star')
+    const ratingValue = document.querySelector('.rating input')
+
+    allStar.forEach((item, idx) => {
+      item.addEventListener('click', function () {
+        let click = 0
+        ratingValue.value = idx + 1
+
+        allStar.forEach(i => {
+          i.classList.replace('bxs-star', 'bx-star')
+          i.classList.remove('active')
+        })
+        for (let i = 0; i < allStar.length; i++) {
+          if (i <= idx) {
+            allStar[i].classList.replace('bx-star', 'bxs-star')
+            allStar[i].classList.add('active')
+          } else {
+            allStar[i].style.setProperty('--i', click)
+            click++
+          }
+        }
+      })
+    })
   </script>
+
 </body>
 
 </html>
