@@ -148,6 +148,7 @@ a {
   font-family: var(--fontFamily-dm_sans);
   font-size: smaller;
 }
+
 .footer-right {
   font-family: var(--fontFamily-dm_sans);
 }
@@ -245,8 +246,8 @@ body.nav-active {
 }
 
 .img-small {
-  width: 60px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 .title-2-0 {
@@ -1017,13 +1018,14 @@ body.nav-active {
   margin-block-end: 60px;
   color: white;
 }
+
 .navbar .logo p {
   font-family: var(--fontFamily-forum);
 }
 
 .navbar-list {
   margin-block-end: 100px;
-  text-align:center;
+  text-align: center;
 }
 
 /* .navbar-item {
@@ -1036,7 +1038,7 @@ body.nav-active {
   text-transform: uppercase;
   padding-block: 10px;
   max-width: unset;
-  color:whitesmoke;
+  color: whitesmoke;
 }
 
 .navbar-list::after {
@@ -2375,6 +2377,7 @@ textarea.input-field {
 .footer-distributed .footer-links .link-1:before {
   content: none;
 }
+
 .footer-distributed .footer-links a:hover:before {
   /* color: red; */
   /* Change this to your desired color on hover */
@@ -2426,6 +2429,10 @@ textarea.input-field {
 @media (max-width: 880px) {
   .footer-distributed {
     font: bold 14px sans-serif;
+  }
+
+  .lang {
+    display: none;
   }
 
   .footer-distributed .footer-left,
@@ -2580,6 +2587,7 @@ textarea.input-field {
     --section-space: 50px;
 
   }
+
 
 
 
@@ -2784,7 +2792,7 @@ textarea.input-field {
   }
 
   .navbar-list {
-    display: flex;
+    display: none;
     gap: 20px;
   }
 
@@ -2930,10 +2938,11 @@ textarea.input-field {
   .navbar {
     margin-inline: auto;
   }
-    .navbar-list {
-      display: flex;
-      gap: 30px;
-    }
+
+  .navbar-list {
+    display: flex;
+    gap: 30px;
+  }
 
 
   /**
@@ -3105,6 +3114,23 @@ gallery
 @media only screen and (max-width: 639px) {}
 
 @media only screen and (max-width: 479px) {}
+
+@media only screen and (max-width: 979px) {
+
+  .btn-secondary,
+  .res,
+  .header .overlay {
+    display: none;
+  }
+  .navbar-link .span {
+    font-size: small;
+  }
+
+  .navbar,
+  .navbar.active {
+    margin-inline: auto 20px;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 979px) {
   .ag-format-container {
