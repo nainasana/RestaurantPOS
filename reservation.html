@@ -41,114 +41,7 @@
   <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
 
 </head>
-<style>
-  .banner {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/banner-img.jpg") center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding-bottom: 20px;
-  }
- @media (max-width: 320px) {
-    #dynamicSectionsContainer {
-      margin-top: 100px;
 
-  }
-    
-  }
-
-  
-
-  .center-button {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  .card-container {
-    display: grid;
-    grid-template-columns: 500px 500px;
-  }
-
-  .card-img {
-    background: url("assets/images/4.jpg") center/cover no-repeat;
-  }
-
-  .banner h2 {
-    padding-bottom: 40px;
-    margin-bottom: 20px;
-  }
-  .tag {
-    text-align: center;
-    color: #000;
-    font-family: var(--fontFamily-dm_sans);
-    font-size:x-large;
-    margin: 20px 0 20px 0;
-  }
-
-  .card-content {
-    background: #fff;
-    height: 330px;
-  }
-
-  .card-content h3 {
-    text-align: center;
-    color: #000;
-    padding: 20px 0 10px 0;
-    font-size: 26px;
-    font-weight: 500;
-  }
-
-  .form-row {
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  form select,
-  form input {
-    display: block;
-    width: 100%;
-    margin: 15px 12px;
-    padding: 5px;
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-    border: none;
-    font-weight: 300;
-  }
-
-  .timings {
-    text-align: center;
-  }
-
-  form input[type=text],
-  form input[type=number],
-  form input::placeholder,
-  select {
-    color: #9a9a9a;
-  }
-
-
-
-  form input[type=submit]:hover {
-    opacity: 0.9;
-  }
-
-  @media(max-width: 992px) {
-    .card-container {
-      grid-template-columns: 100%;
-      width: 100vw;
-    }
-
-    .card-img {
-      height: 330px;
-    }
-  }
-</style>
 
 <body id="top">
 
@@ -259,10 +152,179 @@
 
     </div>
   </header>
+  <section class="hero text-center" aria-label="home" id="home">
+    <ul class="hero-slider" data-hero-slider>
+      <li class="slider-item active" data-hero-slider-item>
+        <div class="slider-bg">
+          <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt="" class="img-cover">
+        </div>
+        <p class="label-2 section-subtitle slider-reveal">Tradational & Hygine</p>
+        <h1 class="display-1 hero-title slider-reveal">
+          For the love of <br>
+          delicious food
+        </h1>
+      </li>
 
+      <li class="slider-item" data-hero-slider-item>
+        <div class="slider-bg">
+          <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt="" class="img-cover">
+        </div>
+        <p class="label-2 section-subtitle slider-reveal">delightful experience</p>
+        <h1 class="display-1 hero-title slider-reveal">
+          Flavors Inspired by <br>
+          the Seasons
+        </h1>
+      </li>
+
+      <li class="slider-item" data-hero-slider-item>
+        <div class="slider-bg">
+          <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt="" class="img-cover">
+        </div>
+        <p class="label-2 section-subtitle slider-reveal">amazing & delicious</p>
+        <h1 class="display-1 hero-title slider-reveal">
+          Where every flavor <br>
+          tells a story
+        </h1>
+      </li>
+    </ul>
+
+    <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+      <ion-icon name="chevron-back"></ion-icon>
+    </button>
+
+    <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+      <ion-icon name="chevron-forward"></ion-icon>
+    </button>
+
+  </section>
+<section class ="mt-24">
+  <div class="container my-12 mx-auto px-4 md:px-12">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+            <article class="overflow-hidden rounded-lg shadow-lg">
+                <a href="#">
+                    <img alt="Placeholder" class="block h-auto w-full" src="./assets/images/hero-slider-1.jpg">
+                </a>
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                    <h1 class="text-lg">
+                        <a class="no-underline hover:underline text-black" href="#">
+                    Branches
+                        </a>
+                    </h1>   
+                </header>
+                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                        <p class="ml-2 text-2xl">
+                          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet
+                        </p>
+                    </a> 
+                  </footer>
+                </article>
+        </div>
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+          <article class="overflow-hidden rounded-lg shadow-lg">
+              <a href="#">
+                  <img alt="Placeholder" class="block h-auto w-full" src="./assets/images/hero-slider-1.jpg">
+              </a>
+              <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                  <h1 class="text-lg">
+                      <a class="no-underline hover:underline text-black" href="#">
+                  Branches
+                      </a>
+                  </h1>   
+              </header>
+              <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                      <p class="ml-2 text-2xl">
+                        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet
+                      </p>
+                  </a> 
+                </footer>
+              </article>
+      </div>
+      <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        <article class="overflow-hidden rounded-lg shadow-lg">
+            <a href="#">
+                <img alt="Placeholder" class="block h-auto w-full" src="./assets/images/hero-slider-1.jpg">
+            </a>
+            <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                <h1 class="text-lg">
+                    <a class="no-underline hover:underline text-black" href="#">
+                Branches
+                    </a>
+                </h1>   
+            </header>
+            <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                    <p class="ml-2 text-2xl">
+                      Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet
+                    </p>
+                </a> 
+              </footer>
+            </article>
+
+    </div>
+    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+      <article class="overflow-hidden rounded-lg shadow-lg">
+          <a href="#">
+              <img alt="Placeholder" class="block h-auto w-full" src="./assets/images/hero-slider-1.jpg">
+          </a>
+          <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+              <h1 class="text-lg">
+                  <a class="no-underline hover:underline text-black" href="#">
+              Branches
+                  </a>
+              </h1>   
+          </header>
+          <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                  <p class="ml-2 text-2xl">
+                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet
+                  </p>
+              </a> 
+            </footer>
+          </article>
+  </div>
+  <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+    <article class="overflow-hidden rounded-lg shadow-lg">
+        <a href="#">
+            <img alt="Placeholder" class="block h-auto w-full" src="./assets/images/hero-slider-1.jpg">
+        </a>
+        <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+            <h1 class="text-lg">
+                <a class="no-underline hover:underline text-black" href="#">
+            Branches
+                </a>
+            </h1>   
+        </header>
+        <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                <p class="ml-2 text-2xl">
+                  Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet
+                </p>
+            </a> 
+          </footer>
+        </article>
+</div>
+<div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+  <article class="overflow-hidden rounded-lg shadow-lg">
+      <a href="#">
+          <img alt="Placeholder" class="block h-auto w-full" src="./assets/images/hero-slider-1.jpg">
+      </a>
+      <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+          <h1 class="text-lg">
+              <a class="no-underline hover:underline text-black" href="#">
+          Branches
+              </a>
+          </h1>   
+      </header>
+      <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+              <p class="ml-2 text-2xl">
+                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet
+              </p>
+          </a> 
+        </footer>
+  </article>
+</div>
+</div>
+</section>
 
 <div id="dynamicSectionsContainer"></div>
-
 <div class="footer">
   <footer class="footer-distributed">
     <div class="footer-left flex">
@@ -310,128 +372,6 @@
     </div>
   </footer>
 </div>
-
-  
-
-
-<script>
-  // Function to create a dynamic reservation form section
-  function createReservationSection(title) {
-    const section = document.createElement("section");
-    section.className = "banner";
-
-    const h1 = document.createElement("h1");
-    h1.textContent = `BOOK YOUR TABLE NOW AT ${title}`;
-    h1.style.margin = "10px 0 20px 0";
-    h1.style.fontSize = "var(--fontSize-title-1)";
-
-    const cardContainer = document.createElement("div");
-    cardContainer.className = "card-container";
-
-    const cardImg = document.createElement("div");
-    cardImg.className = "card-img";
-
-    // You can set the background image for cardImg here
-
-    const cardContent = document.createElement("div");
-    cardContent.className = "card-content";
-
-    const tag = document.createElement("h1");
-    tag.textContent = "Reservation";
-    tag.className = "tag";
-    tag.style.textAlign = "center";
-    tag.style.color = "#000";
-    tag.style.fontFamily = "var(--fontFamily-dm_sans)";
-    tag.style.fontSize = "larger";
-
-    const timings = document.createElement("p");
-    timings.className = "mx-auto timings";
-    timings.style.color = "#A07E55";
-    timings.style.fontSize = "small";
-    timings.style.fontWeight = "bold";
-    timings.textContent = "Timings: open at 2am closes at 5pm";
-
-    const reservationForm = document.createElement("form");
-
-    // Add form elements dynamically
-    reservationForm.innerHTML = `
-        <div class="form-row">
-            <select name="days">
-                <option value="day-select">Select Day</option>
-                <option value="sunday">Sunday</option>
-                <option value="monday">Monday</option>
-                <option value="tuesday">Tuesday</option>
-                <option value="wednesday">Wednesday</option>
-                <option value="thursday">Thursday</option>
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-            </select>
-
-            <select name="hours">
-                <option value="hour-select">Select Hour</option>
-                <option value="10">10: 00</option>
-                <option value="12">12: 00</option>
-                <option value="14">14: 00</option>
-                <option value="16">16: 00</option>
-                <option value="18">18: 00</option>
-                <option value="20">20: 00</option>
-                <option value="22">22: 00</option>
-            </select>
-        </div>
-
-        <div class="form-row">
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Phone Number">
-            <input type="email" placeholder="Email"> <!-- Added email input -->
-        </div>
-
-        <div class="form-row">
-            <input type="number" placeholder="How Many Persons?" min="1">
-            <div class="btn btn-primary" style="
-                                        width:100%;
-                                        color: black;
-                                        height:100%;
-                                        font-family: var(--fontFamily-dm_sans);
-                                        padding: 6px 20px;
-                                        margin-top: 13px;
-                                        letter-spacing: 1px;
-                                    ">
-                <span class="text text-1">Book Table</span>
-                <span class="text text-2" aria-hidden="true">Book Table</span>
-            </div>
-        </div>
-    `;
-
-    // Add event listener to form inputs for changing text color
-    reservationForm.querySelectorAll('input, select').forEach((input) => {
-      input.addEventListener('input', () => {
-        input.style.color = "black";
-      });
-    });
-
-    // Append elements to the container
-    cardContent.appendChild(tag);
-    cardContent.appendChild(timings);
-    cardContent.appendChild(reservationForm);
-    cardContainer.appendChild(cardImg);
-    cardContainer.appendChild(cardContent);
-    section.appendChild(h1);
-    section.appendChild(cardContainer);
-
-    return section;
-  }
-
-  // Create dynamic reservation sections based on titles
-  const reservationTitles = ["GINZA", "SHIBUYA", "DAIMON", "OKACHIMACHI", "KOMATSUGAWA"];
-
-  const dynamicSectionsContainer = document.getElementById("dynamicSectionsContainer");
-
-  reservationTitles.forEach((title) => {
-    const reservationSection = createReservationSection(title);
-    dynamicSectionsContainer.appendChild(reservationSection);
-  });
-</script>
-
 
   <script src="assets/js/script.js"></script>
 </body>
