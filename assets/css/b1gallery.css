@@ -4,7 +4,7 @@
     position: relative;
     min-height: 100%;
     width: 100%;
-    margin: 0 20px;
+    padding: 10px 10px;
 }
 
 .light-box-section .lightBox {
@@ -118,7 +118,7 @@
 .light-box-section .image-gallery {
     max-width: 1300px;
     width: 100%;
-    background: #fff;
+    padding:0 10px;
     margin: auto;
 }
 
@@ -135,7 +135,7 @@
 .image-gallery .image-container {
     columns: 3;
     margin-top: 20px;
-    gap: 15px;
+    gap: 12px;
 }
 
 .image-container img {
@@ -146,7 +146,7 @@
 .image-container .image-box {
     position: relative;
     cursor: pointer;
-    margin: 10px 0;
+    margin: 0px 0px 12px 0;
 }
 
 .image-box .logo_icons {

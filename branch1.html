@@ -79,9 +79,20 @@
         }
 
         @media (max-width: 320px) {
-            #dynamicSectionsContainer {
-                margin-top: 100px;
+            .card-container {
+                padding: 0 10px 10px 10px;
+            }
 
+            h1 {
+                padding: 10px 10px 0 10px;
+            }
+
+            .hero-section {
+                margin: 0 10px 0 10px;
+                height: 300px;
+            }
+            .tan-img2 {
+                width:100%;
             }
 
         }
@@ -214,6 +225,31 @@
         }
 
         @media (max-width: 320px) {
+
+            .location {
+                display: block;
+                padding: 0 10px 0 10px;
+            }
+
+            location-link p {
+                text-align: center;
+                margin: auto;
+                width: 100%;
+            }
+
+            p {
+                width: 100%;
+            }
+
+            .text-container {
+                height: 300px;
+            }
+
+            .contact {
+                display: block;
+                padding: 0px 10px 0 10px;
+            }
+
             .order-flex-container {
                 display: block;
             }
@@ -341,6 +377,12 @@
         }
 
         @media (min-width: 1024px) {
+            .tan-img2 {
+                width:80%;
+            }
+            .tan-p {
+                width: 100%;
+            }
             .file-body {
                 display: flex;
                 font-weight: 300;
@@ -402,11 +444,9 @@
             }
         }
 
-
-
         /* Unique Hero Section Styles */
         .hero-section {
-            height: 500px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -473,6 +513,66 @@
 
             .unique-btn {
                 font-size: 16px;
+            }
+        }
+
+        .min {
+            display: grid;
+            padding: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: center;
+            max-width: 1800px;
+            margin: 0 auto;
+            font: 500 100%/1.5 system-ui;
+        }
+
+        .min2 {
+            display: grid;
+            padding: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: center;
+            max-width: 1800px;
+            justify-items: end;
+            margin: 0 auto;
+            font: 500 100%/1.5 system-ui;
+        }
+
+        tan-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        tan-img2 {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        @media (max-width: 650px) {
+            .min {
+                display: block;
+                font-size: 80%;
+            }
+
+            .tan-text {
+                position: relative;
+                margin: 0rem 0 2rem 1rem;
+                padding: 1rem;
+                background: rgba(white, 0.8);
+            }
+
+            .min2 {
+                display: block;
+                font-size: 80%;
+            }
+
+            .tan-text2 {
+                position: relative;
+                margin: 0rem 0 2rem 1rem;
+                padding: 1rem;
+                background: rgba(white, 0.8);
             }
         }
     </style>
@@ -607,60 +707,52 @@
 
                 </ul>
             </section>
-
-            <section class="text-center py-20" style="background-color:#E7E5DC">
-                <h1 class="section-subtitle-2 label-2-0">Popular</h1>
-                <h2 class="headline-1 section-title">Our Specialities</h2>
-
-
-                <div class="file-body" style="margin-bottom:50px;">
-
-                    <div class="order-flex-container h-50">
-                        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-                            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-                            <img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg" alt="HTML Image">
-                        </div>
-                        <div class="box box-with-para flex flex-col items-start justify-center">
-                            <h2 class="headline-1 section-title">Tandoori</h2>
-                            <p class="">A small description of Tandoori and why it is our specialty. and
-                                any if any TV features
-                                we can add
-                                it here</p>
-                            <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
-                                <span class="text text-1" style="color:black">Order </span>
-
-                                <span class="text text-2" aria-hidden="true">Order</span>
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div class="order-flex-container">
-                        <div class="box box-with-para" x-data="{show: false}" :class="{ 'show': show }"
-                            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-                            <div class="flex flex-col items-center justify-center">
-                                <h2 class="headline-1 section-title mx-auto">Biryani</h2>
-                                <p class="">A small description of Biryani and why it is our specialty.
-                                    and any if any TV
-                                    features we can add
-                                    it here</p>
-                                <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
-                                    <span class="text text-1" style="color:black">Order </span>
-
-                                    <span class="text text-2" aria-hidden="true">Order</span>
-                                </a>
-
-                            </div>
-                        </div>
-                        <div class="box box-with-html" x-data="{show: false}" :class="{ 'show': show }"
-                            @scroll.window="show = window.scrollY > window.innerHeight / 5 * 4">
-
-                            <img src="assets/images/Hyderbadi-Chicken-Biryani-scaled.jpg" alt="HTML Image">
-                        </div>
-                    </div>
-            </section>
-
             </div>
+
+            <div style="margin: 100px 0 100px 0">
+                <h1 class="section-subtitle-2 label-2-0 text-center">Popular</h1>
+                <h2 class="headline-1 mb-20 section-title text-center">Our Specialities</h2>
+                <div class="min">
+                    <div class="tan-img"><img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg" alt="..."
+                            height="" width="" /></div>
+                    <div class="tan-text">
+                        <h2 class="headline-1 section-title">Tandoori</h2>
+                        <p class="tan-p w-full lg:w-1/2">
+                            A small description of Tandoori <br />and why it is our specialty. and
+                            any if any TV features<br />
+                            we can add
+                            it here</p>
+                        <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
+                            <span class="text text-1" style="color:black">Order </span>
+
+                            <span class="text text-2" aria-hidden="true">Order</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="min2">
+                    <div class="tan-text2">
+                        <h2 class="headline-1 section-title mx-auto">Biryani</h2>
+                        <p class="tan-p w-full lg:w-1/2 mx-auto">
+                            A small description of Biryani <br />and why it is our specialty. and any if any TV features we<br/>
+                            can add it here
+                        </p>
+                        <a href="#" class="btn btn-primary" style="margin: 10px 0px 0px 0px">
+                            <span class="text text-1" style="color: black">Order </span>
+                            <span class="text text-2" aria-hidden="true">Order</span>
+                        </a>
+                    </div>
+                    <div class="tan-img2" style=" justify-items: end;">
+                        <img src="assets/images/Hyderbadi-Chicken-Biryani-scaled.jpg" alt="..."
+                            class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- ----------------- menu ------------------  -->
             <section class="hero-section unique-hero-section">
                 <div class="hero-overlay unique-hero-overlay">
                     <div class="hero-content unique-hero-content">
@@ -675,104 +767,104 @@
                 </div>
             </section>
 
-<!-- ------------- Gallery ----------  -->
+            <!-- ------------- Gallery ----------  -->
 
-<section>
-    <div class="light-box-section"  style="padding:50px 0 50px 0">
-        <h1 class="section-subtitle-2 label-2-0 text-center">Our Gallery</h1>
-        <h2 class="headline-1 section-title text-center">Gallery</h2>
+            <section>
+                <div class="light-box-section" style="padding:100px 0 100px 0">
+                    <h1 class="section-subtitle-2 label-2-0 text-center">Our Gallery</h1>
+                    <h2 class="headline-1 section-title text-center">Gallery</h2>
 
-        <div class="lightBox">
-            <div class="lightBox_content">
-                <i class="fas fa-times close"></i>
-                <div class="logo_icons">
-                </div>
-                <div class="showImg">
-                    <div class="image">
-                        <img src="images/img1.jpg" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="image-gallery">
-            <div class="image-container">
-                <div class="image-box">
-                    <img class="gImg" src="assets/images/1.jpg" alt="" />
-                    <div class="logo_icons">
-                        <a href="#">
-                            <div class="text_content">
-                                <span class="name">Ginza</span>
+                    <div class="lightBox">
+                        <div class="lightBox_content">
+                            <i class="fas fa-times close"></i>
+                            <div class="logo_icons">
                             </div>
-                        </a>
-
-                    </div>
-                </div>
-                <div class="image-box">
-                    <img class="gImg" src="assets/images/2.jpg" alt="" />
-                    <div class="logo_icons">
-                        <a href="#">
-
-                            <div class="text_content">
-                                <span class="name">Ginza</span>
+                            <div class="showImg">
+                                <div class="image">
+                                    <img src="images/img1.jpg" alt="" />
+                                </div>
                             </div>
-                        </a>
-
+                        </div>
                     </div>
-                </div>
-                <div class="image-box">
-                    <img class="gImg" src="assets/images/3.jpg" alt="" />
-                    <div class="logo_icons">
-                        <a href="#">
 
-                            <div class="text_content">
-                                <span class="name">Ginza</span>
+                    <div class="image-gallery">
+                        <div class="image-container">
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/1.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
+                                        <div class="text_content">
+                                            <span class="name">Ginza</span>
+                                        </div>
+                                    </a>
+
+                                </div>
                             </div>
-                        </a>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/2.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
 
-                    </div>
-                </div>
-                <div class="image-box">
-                    <img class="gImg" src="assets/images/4.jpg" alt="" />
-                    <div class="logo_icons">
-                        <a href="#">
+                                        <div class="text_content">
+                                            <span class="name">Ginza</span>
+                                        </div>
+                                    </a>
 
-                            <div class="text_content">
-                                <span class="name">Ginza</span>
+                                </div>
                             </div>
-                        </a>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/3.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
 
-                    </div>
-                </div>
-                <div class="image-box">
-                    <img class="gImg" src="assets/images/5.jpg" alt="" />
-                    <div class="logo_icons">
-                        <a href="#">
+                                        <div class="text_content">
+                                            <span class="name">Ginza</span>
+                                        </div>
+                                    </a>
 
-                            <div class="text_content">
-                                <span class="name">Ginza</span>
+                                </div>
                             </div>
-                        </a>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/4.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
 
-                    </div>
-                </div>
-                <div class="image-box">
-                    <img class="gImg" src="assets/images/6.jpg" alt="" />
-                    <div class="logo_icons">
-                        <a href="#">
+                                        <div class="text_content">
+                                            <span class="name">Ginza</span>
+                                        </div>
+                                    </a>
 
-                            <div class="text_content">
-                                <span class="name">Ginza</span>
+                                </div>
                             </div>
-                        </a>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/5.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
 
+                                        <div class="text_content">
+                                            <span class="name">Ginza</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/6.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
+
+                                        <div class="text_content">
+                                            <span class="name">Ginza</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
 
 
 
@@ -781,15 +873,15 @@
 
             <div class="bg-white text-gray-800 text-xl" style="background:#E7E5DC">
 
-                <div class="container mx-auto p-8">
+                <div class="container mx-auto p-40">
 
-                    <section class="text-center my-20">
+                    <section class="text-center lg:my-20">
                         <h1 class="section-subtitle-2 label-2-0">Contact Us</h1>
 
                     </section>
 
-                    <section class="flex justify-between items-start">
-                        <div class="w-1/2 pr-8">
+                    <section class="location flex justify-between lg:items-start items-center">
+                        <div class="lg:w-1/2 lg:pr-8">
                             <div class="h-100 map-container" id="gmap_canvas">
                                 <!-- Google Maps Embed Goes Here -->
                                 <iframe width="100%" height="84%" frameborder="0" style="border: 0"
@@ -798,16 +890,20 @@
                             </div>
                         </div>
 
-                        <div class="w-1/2 text-container text-center">
+                        <div class="lg:w-1/2 text-container text-center">
                             <h2 class="headline-1 section-title">Location</h2>
                             <div class="address">
                                 <a href="#" class="location-link">
-                                    <p>104-0061 Tokyo, Chuo CIty, Ginza, 1 Chome-8-2, Ginza Premier Building 2F (56
+                                    <p style="width:100%">104-0061 Tokyo, Chuo CIty, Ginza, 1 Chome-8-2, Ginza Premier
+                                        Building 2F (56
                                         seats)</p>
                                 </a><br />
                                 <a href="#" class="location-link">
-                                    <p>2 minutes walk from exit 7 of Ginza 1-chrome station on the Yurakucho line</p>
-                                    <p>2 minutes walk from exit 1 of Kyobashi station on the Ginza line</p>
+                                    <p style="width:100%">2 minutes walk from exit 7 of Ginza 1-chrome station on the
+                                        Yurakucho line
+                                    </p>
+                                    <p style="width:100%">2 minutes walk from exit 1 of Kyobashi station on the Ginza
+                                        line</p>
                                 </a>
                             </div>
                         </div>
@@ -815,20 +911,22 @@
 
 
                     </section>
-                    <div class="contact grid grid-cols-2 place-items-start justify-center mx-auto text-start">
+                    <div
+                        class="contact grid grid-cols-2 place-items-start justify-center mx-auto text-center lg:text-start">
                         <h2 class="headline-1 section-title">Business Hours</h2>
                         <a href="#" class="contact-link">
-                            <p>Weekdays - 11:15AM - 2:30PM, 5:00PM - 9:00PM</p><br />
-                            <p>Weekends - 11:30AM - 2:30PM, 5:00PM - 9:00PM</p>
+                            <p style="width:100%">Weekdays - 11:15AM - 2:30PM, 5:00PM - 9:00PM</p><br />
+                            <p style="width:100%">Weekends - 11:30AM - 2:30PM, 5:00PM - 9:00PM</p>
                         </a>
                     </div>
 
-                    <div class="contact grid grid-cols-2 place-items-start my-10 justify-center text-start">
+                    <div
+                        class="contact grid grid-cols-2 place-items-start my-10 justify-center text-center lg:text-start">
                         <h2 class="headline-1 section-title">Contact Us</h2>
                         <a href="#" class="contact-link">
-                            <p>TEL - 03-3567-4005</p>
+                            <p style="width:100%">TEL - 03-3567-4005</p>
                             <br />
-                            <p>andhradining@gmail.com</p>
+                            <p style="width:100%">andhradining@gmail.com</p>
                         </a>
                     </div>
 
@@ -838,7 +936,7 @@
 
             <div id="dynamicSectionsContainer"></div>
 
-            
+
             <!-- -----footer----- -->
 
             <div class="footer">
@@ -856,7 +954,8 @@
                             <div
                                 class="flex flex-row flex-wrap gap-5 items-center justify-start text-2xl mx-auto lg:mx-1">
                                 <i class="fa fa-envelope"></i>
-                                <p class="text-#A07E55"><a href="mailto:support@company.com">support@company.com</a></p>
+                                <p class="text-#A07E55"><a href="mailto:support@company.com">support@company.com</a>
+                                </p>
                             </div>
                         </div>
                         <p class="footer-company-name">Andhra Dining © 2024</p>
@@ -875,7 +974,8 @@
                     <div class="footer-right">
                         <p class="footer-company-about">
                             <span>About the company</span>
-                            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu
+                            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit,
+                            eu
                             auctor lacus
                             vehicula sit amet.
                         </p>
