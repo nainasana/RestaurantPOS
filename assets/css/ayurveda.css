@@ -35,7 +35,7 @@
     height: 100vh;
     margin-top: 100px;
     width: 100vw;
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative;
     background-color: #E7E5DC;
 }
@@ -88,14 +88,14 @@
 }
 .carousel .list .item .buttons button{
     border: none;
-    background-color: #eee;
-    letter-spacing: 3px;
-    font-family: var(--fontFamily-forum);
+    /* background-color: #eee; */
+    letter-spacing: 2px;
+    font-family: monospace;
     font-weight: 400;
-    border: 1px solid #2D1E16;
-    color:#2D1E16;
+    border: 1px solid #F2F2F2;
+    color:#F2F2F2;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
 }
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
@@ -108,7 +108,7 @@
     bottom: 50px;
     left: 50%;
     width: max-content;
-    z-index: 100;
+    z-index: 1;
     display: flex;
     gap: 20px;
 }
@@ -142,7 +142,7 @@
     position: absolute;
     top: 80%;
     right: 52%;
-    z-index: 100;
+    z-index: 1;
     width: 300px;
     max-width: 30%;
     display: flex;
@@ -176,7 +176,7 @@
 .carousel .list .item:nth-child(1) .content .title,
 .carousel .list .item:nth-child(1) .content .topic,
 .carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons
+.carousel .list .item:nth-child(1) .content .btn
 {
     transform: translateY(50px);
     filter: blur(20px);
@@ -199,7 +199,7 @@
 .carousel .list .item:nth-child(1) .content .des{
     animation-delay: 1.6s!important;
 }
-.carousel .list .item:nth-child(1) .content .buttons{
+.carousel .list .item:nth-child(1) .content .btn{
     animation-delay: 1.8s!important;
 }
 /* create animation when next click */
@@ -302,7 +302,7 @@
 .carousel.prev .list .item:nth-child(2) .content .title,
 .carousel.prev .list .item:nth-child(2) .content .topic,
 .carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons
+.carousel.prev .list .item:nth-child(2) .content .btn
 {
     animation: contentOut 1.5s linear 1 forwards!important;
 }
