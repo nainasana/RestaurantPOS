@@ -61,97 +61,103 @@
 
   <header class="header" data-header>
     <div class="container">
-
       <a href="#" class="logo">
-        <p style="font-size: 30px;">ANDHRA DINING</p>
-        <!-- <img src="./assets/images/logo.svg1" width="160" height="50" alt="AP - Home"> -->
+        <p style="font-size: 30px;font-family: Biospace;">ANDHRA DINING</p>
       </a>
       <nav class="navbar" data-navbar>
-
+  
         <button class="close-btn" aria-label="close menu" data-nav-toggler>
           <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
         </button>
-<!-- 
-        <a href="#" class="logo">
-          <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home">
-        </a> -->
-
+        <div class="block lg:hidden">
+          <ul class="navbar-list flex flex-col-2 flex-wrap gap-5 flex-row-2 mx-auto items-center justify-center"
+            style="margin-block-end:0px">
+            <li class="navbar-item">
+              <a href="#" class="navbar-link hover-underline">
+                <img src="assets/images/usa.png" alt="usa Flag" class="flag-icon" width="20" height="10"
+                  aria-hidden="true">
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-link hover-underline">
+                <img src="assets/images/flag.png" alt="Japanese Flag" class="flag-icon" width="20" height="10"
+                  aria-hidden="true">
+              </a>
+            </li>
+          </ul>
+        </div>
         <ul class="navbar-list">
-
+  
           <li class="navbar-item">
             <a href="index.html" class="navbar-link hover-underline active">
               <div class="separator"></div>
-
+  
               <span class="span">Home</span>
             </a>
           </li>
-
-
+  
           <li class="navbar-item">
             <a href="about.html" class="navbar-link hover-underline">
               <div class="separator"></div>
-
               <span class="span">About Us</span>
             </a>
           </li>
-
+  
           <li class="navbar-item">
             <a href="branches.html" class="navbar-link hover-underline">
               <div class="separator"></div>
-
               <span class="span">Branches</span>
             </a>
           </li>
-
+  
           <li class="navbar-item">
             <a href="ayurveda.html" class="navbar-link hover-underline">
               <div class="separator"></div>
-
               <span class="span">Ayurveda</span>
             </a>
           </li>
-
+  
           <li class="navbar-item">
             <a href="gallery.html" class="navbar-link hover-underline">
               <div class="separator"></div>
-
               <span class="span">Gallery</span>
             </a>
           </li>
-
-          <li class="navbar-item">
-            <a href="#contactus" class="navbar-link hover-underline">
-              <div class="separator"></div>
-
-              <span class="span">Contact Us</span>
-            </a>
-          </li>
-          
-
-
         </ul>
       </nav>
-
-      <a href="#" class="btn btn-secondary">
+  
+      <a href="reservation.html" class="btn btn-secondary">
         <span class="text text-1">Reservation</span>
-
         <span class="text text-2" aria-hidden="true">Reservation</span>
       </a>
-
-      <!-- <a href="#" class="menu-text">
-        <span class="text-3">Menu</span>
-      </a> -->
-
+  
+      <div class="hidden lg:flex" style="margin: 0 20px;">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#" class="navbar-link hover-underline">
+              <img src="assets/images/usa.png" alt="usa Flag" class="flag-icon" width="30" height="20">
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link hover-underline">
+              <img src="assets/images/flag.png" alt="Japanese Flag" class="flag-icon" width="30" height="20">
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+  
+  
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <span class="line line-1"></span>
         <span class="line line-2"></span>
         <span class="line line-3"></span>
       </button>
-
+  
       <div class="overlay" data-nav-toggler data-overlay></div>
-
     </div>
   </header>
+
 
 
 

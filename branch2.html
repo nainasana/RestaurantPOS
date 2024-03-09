@@ -36,6 +36,7 @@
     - custom css link
   -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/b1gallery.css" />
 
     <!-- 
     - preload images
@@ -43,6 +44,553 @@
     <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
     <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="./assets/images/heroslider-3.jpg">
+    <style>
+        .address a {
+            color: #A07E55;
+            font-family: var(--fontFamily-dm_sans);
+            font-weight: bold;
+            font-size: medium;
+            line-height: 20px;
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            padding: 20px 0 20px 0;
+        }
+
+        .contact a {
+            color: #A07E55;
+            font-family: var(--fontFamily-dm_sans);
+            font-weight: bold;
+            font-size: medium;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .banner {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/banner-img.jpg") center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 320px) {
+            .card-container {
+                padding: 0 10px 10px 10px;
+            }
+
+            h1 {
+                padding: 10px 10px 0 10px;
+            }
+
+            .hero-section {
+                margin: 0 10px 0 10px;
+                height: 300px;
+            }
+
+            .tan-img2 {
+                width: 100%;
+            }
+
+        }
+
+
+
+        .center-button {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: 500px 500px;
+        }
+
+        .card-img {
+            background: url("assets/images/4.jpg") center/cover no-repeat;
+        }
+
+        .banner h2 {
+            padding-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            text-align: center;
+            color: #000;
+            font-family: var(--fontFamily-dm_sans);
+            font-size: x-large;
+            margin: 20px 0 20px 0;
+        }
+
+        .card-content {
+            background: #fff;
+            height: 330px;
+        }
+
+        .card-content h3 {
+            text-align: center;
+            color: #000;
+            padding: 20px 0 10px 0;
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        .form-row {
+            display: flex;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        form select,
+        form input {
+            display: block;
+            width: 100%;
+            margin: 15px 12px;
+            padding: 5px;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            border: none;
+            font-weight: 300;
+        }
+
+        .timings {
+            text-align: center;
+        }
+
+        form input[type=text],
+        form input[type=number],
+        form input::placeholder,
+        select {
+            color: #9a9a9a;
+        }
+
+
+
+        form input[type=submit]:hover {
+            opacity: 0.9;
+        }
+
+        @media(max-width: 992px) {
+            .card-container {
+                grid-template-columns: 100%;
+                width: 100vw;
+            }
+
+            .card-img {
+                height: 330px;
+            }
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        .bg-A07E55 {
+            background-color: #E7E5DC;
+            /* Additional styles go here */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .map-container,
+        .text-container {
+            height: 400px;
+            /* Set the desired height */
+        }
+
+        .banner-section {
+            display: none;
+        }
+
+        .modal-container {
+            top: 13%;
+
+        }
+
+        .modal-container.hidden {
+            display: none;
+        }
+
+        /* Style to hide the scrollbar on the body when the modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 320px) {
+
+            .location {
+                display: block;
+                padding: 0 10px 0 10px;
+            }
+
+            location-link p {
+                text-align: center;
+                margin: auto;
+                width: 100%;
+            }
+
+            p {
+                width: 100%;
+            }
+
+            .text-container {
+                height: 300px;
+            }
+
+            .contact {
+                display: block;
+                padding: 0px 10px 0 10px;
+            }
+
+            .order-flex-container {
+                display: block;
+            }
+
+            .file-body {
+                display: block;
+            }
+
+            .box-with-para,
+            .box-with-html {
+                opacity: 0;
+                transform: translateX(400%);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                box-sizing: border-box;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+
+        }
+
+        @media (max-width: 425px) {
+            .order-flex-container {
+                display: block;
+            }
+
+            .file-body {
+                display: block;
+            }
+
+            .flag {
+                display: none;
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+
+            .file-body {
+                display: block;
+            }
+
+            .order-flex-container {
+                display: block;
+                gap: 0px;
+            }
+
+            .box-with-para,
+            .box-with-html {
+                opacity: 0;
+                transform: translateX(400%);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                box-sizing: border-box;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+            p {
+                width: 190px;
+                font-size: small;
+                line-height: 20px;
+            }
+
+            .btn-primary {
+                padding: 0px 8px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .flag {
+                display: flex;
+            }
+
+            .file-body {
+                display: flex;
+                font-weight: 300;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                overflow-x: hidden;
+            }
+
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                margin: 10px;
+                transform: translateX(400%);
+                transition: transform 0.4s ease;
+                flex-grow: 1;
+                box-sizing: border-box;
+            }
+
+            .box:nth-of-type(even) {
+                transform: translateX(-400%);
+            }
+
+            .box.show {
+                transform: translateX(0);
+            }
+
+            .order-flex-container {
+                display: flex;
+                gap: 100px;
+            }
+
+            .box-with-para,
+            .box-with-html {
+
+                opacity: 0;
+                transform: translateX(400%);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                box-sizing: border-box;
+                object-fit: cover;
+                width: 500px;
+                height: 450px;
+                overflow: hidden;
+            }
+
+            .box-with-para.show,
+            .box-with-html.show {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .banner-section {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .flag {
+                display: flex;
+            }
+
+            .tan-img2 {
+                width: 80%;
+            }
+
+            .tan-p {
+                width: 100%;
+            }
+
+            .file-body {
+                display: flex;
+                font-weight: 300;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                overflow-x: hidden;
+                padding: 0 20px;
+            }
+
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                margin: 10px;
+                transform: translateX(400%);
+                transition: transform 0.4s ease;
+                flex-grow: 1;
+                box-sizing: border-box;
+            }
+
+            .box:nth-of-type(even) {
+                transform: translateX(-400%);
+            }
+
+            .box.show {
+                transform: translateX(0);
+            }
+
+            .order-flex-container {
+                display: flex;
+                gap: 100px;
+            }
+
+            .box-with-para,
+            .box-with-html {
+
+                opacity: 0;
+                transform: translateX(400%);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                box-sizing: border-box;
+                object-fit: cover;
+                width: 500px;
+                height: 450px;
+                overflow: hidden;
+            }
+
+            .box-with-para.show,
+            .box-with-html.show {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .banner-section {
+                display: none;
+            }
+        }
+
+        /* Unique Hero Section Styles */
+        .hero-section {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('assets/images/unique-bg.jpg');
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Adjust the overlay color and opacity */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: #fff;
+            /* Adjust the text color */
+        }
+
+        .hero-title {
+            font-size: var(--fontSize-display-1);
+            margin-bottom: 60px;
+            font-family: var(--fontFamily-forum);
+        }
+
+        /* Unique Menu Button Styles */
+        .unique-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            /* Adjust the button text color */
+            /* Adjust the button background color */
+            border: 2px solid #fff;
+            /* Adjust the button border color */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .unique-btn:hover {
+            background-color: #000;
+            /* Adjust the button background color on hover */
+            color: #fff;
+            /* Adjust the button text color on hover */
+        }
+
+
+
+        /* Responsive Styles (Add your media queries here) */
+        @media screen and (max-width: 768px) {
+
+            /* Adjust styles for smaller screens */
+            .unique-hero-title {
+                font-size: 24px;
+            }
+
+            .unique-btn {
+                font-size: 16px;
+            }
+        }
+
+        .min {
+            display: grid;
+            padding: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: center;
+            max-width: 1800px;
+            margin: 0 auto;
+            font: 500 100%/1.5 system-ui;
+        }
+
+        .min2 {
+            display: grid;
+            padding: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: center;
+            max-width: 1800px;
+            justify-items: end;
+            margin: 0 auto;
+            font: 500 100%/1.5 system-ui;
+        }
+
+        tan-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        tan-img2 {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        @media (max-width: 650px) {
+            .min {
+                display: block;
+                font-size: 80%;
+            }
+
+            .tan-text {
+                position: relative;
+                margin: 0rem 0 2rem 1rem;
+                padding: 1rem;
+                background: rgba(white, 0.8);
+            }
+
+            .min2 {
+                display: block;
+                font-size: 80%;
+            }
+
+            .tan-text2 {
+                position: relative;
+                margin: 0rem 0 2rem 1rem;
+                padding: 1rem;
+                background: rgba(white, 0.8);
+            }
+        }
+    </style>
 
 </head>
 
@@ -57,28 +605,37 @@
         <p class="text">ANDHRA DINING</p>
     </div>
 
-
     <!-- 
     - #HEADER
   -->
 
     <header class="header" data-header>
         <div class="container">
-
             <a href="#" class="logo">
-                <p style="font-size: 30px;">ANDHRA DINING</p>
-                <!-- <img src="./assets/images/logo.svg1" width="160" height="50" alt="AP - Home"> -->
+                <p style="font-size: 30px;font-family: Biospace;">ANDHRA DINING</p>
             </a>
             <nav class="navbar" data-navbar>
 
                 <button class="close-btn" aria-label="close menu" data-nav-toggler>
                     <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
                 </button>
-                <!-- 
-        <a href="#" class="logo">
-          <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home">
-        </a> -->
-
+                <div class="block lg:hidden">
+                    <ul class="navbar-list flex flex-col-2 flex-wrap gap-5 flex-row-2 mx-auto items-center justify-center"
+                        style="margin-block-end:0px">
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link hover-underline">
+                                <img src="assets/images/usa.png" alt="usa Flag" class="flag-icon" width="20" height="10"
+                                    aria-hidden="true">
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link hover-underline">
+                                <img src="assets/images/flag.png" alt="Japanese Flag" class="flag-icon" width="20"
+                                    height="10" aria-hidden="true">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <ul class="navbar-list">
 
                     <li class="navbar-item">
@@ -89,11 +646,9 @@
                         </a>
                     </li>
 
-
                     <li class="navbar-item">
                         <a href="about.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
-
                             <span class="span">About Us</span>
                         </a>
                     </li>
@@ -101,7 +656,6 @@
                     <li class="navbar-item">
                         <a href="branches.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
-
                             <span class="span">Branches</span>
                         </a>
                     </li>
@@ -109,7 +663,6 @@
                     <li class="navbar-item">
                         <a href="ayurveda.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
-
                             <span class="span">Ayurveda</span>
                         </a>
                     </li>
@@ -117,34 +670,32 @@
                     <li class="navbar-item">
                         <a href="gallery.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
-
                             <span class="span">Gallery</span>
                         </a>
                     </li>
-
-                    <li class="navbar-item">
-                        <a href="#contactus" class="navbar-link hover-underline">
-                            <div class="separator"></div>
-
-                            <span class="span">Contact Us</span>
-                        </a>
-                    </li>
-
-
-
                 </ul>
             </nav>
 
-            <a href="#" class="btn btn-secondary">
+            <a href="reservation.html" class="btn btn-secondary">
                 <span class="text text-1">Reservation</span>
-
                 <span class="text text-2" aria-hidden="true">Reservation</span>
             </a>
 
-            <!-- <a href="#" class="menu-text">
-        <span class="text-3">Menu</span>
-      </a> -->
-
+            <div class="flag hidden lg:flex" style="margin: 0 20px;">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link hover-underline">
+                            <img src="assets/images/usa.png" alt="usa Flag" class="flag-icon" width="30" height="20">
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link hover-underline">
+                            <img src="assets/images/flag.png" alt="Japanese Flag" class="flag-icon" width="30"
+                                height="20">
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
                 <span class="line line-1"></span>
                 <span class="line line-2"></span>
@@ -152,13 +703,8 @@
             </button>
 
             <div class="overlay" data-nav-toggler data-overlay></div>
-
         </div>
     </header>
-
-
-
-
 
     <main>
         <article>
@@ -167,147 +713,295 @@
         - #HERO
       -->
 
-            <section class="hero text-center" aria-label="home" id="home">
+            <section class="hero text-center" aria-label="home" id="home" class="banner-section">
 
                 <ul class="hero-slider" data-hero-slider>
 
                     <li class="slider-item active" data-hero-slider-item>
 
                         <div class="slider-bg">
-                            <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt=""
-                                class="img-cover">
+                            <img src="./assets/images/ginza.jpeg" width="1880" height="950" alt="" class="img-cover">
                         </div>
+                        <div class="">
+                            <h1 class="display-1 hero-title slider-reveal" style="padding-top:180px;">
+                                SHIBUYA
+                            </h1>
 
-                        <p class="label-2 section-subtitle slider-reveal">Tradational & Hygine</p>
-
-                        <h1 class="display-1 hero-title slider-reveal">
-                            For the love of <br>
-                            delicious food
-                        </h1>
-
-                    </li>
-
-                    <li class="slider-item" data-hero-slider-item>
-
-                        <div class="slider-bg">
-                            <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt=""
-                                class="img-cover">
                         </div>
-
-                        <p class="label-2 section-subtitle slider-reveal">delightful experience</p>
-
-                        <h1 class="display-1 hero-title slider-reveal">
-                            Flavors Inspired by <br>
-                            the Seasons
-                        </h1>
-
-                    </li>
-
-                    <li class="slider-item" data-hero-slider-item>
-
-                        <div class="slider-bg">
-                            <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt=""
-                                class="img-cover">
-                        </div>
-
-                        <p class="label-2 section-subtitle slider-reveal">amazing & delicious</p>
-
-                        <h1 class="display-1 hero-title slider-reveal">
-                            Where every flavor <br>
-                            tells a story
-                        </h1>
-
-
                     </li>
 
                 </ul>
-
-                <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
-                    <ion-icon name="chevron-back"></ion-icon>
-                </button>
-
-                <button class="slider-btn next" aria-label="slide to next" data-next-btn>
-                    <ion-icon name="chevron-forward"></ion-icon>
-                </button>
-
-                <!-- book a table corner image  -->
-                <!-- <a href="#" class="hero-btn has-after">
-          <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
-
-          <span class="label-2 text-center span">Book A Table</span>
-        </a> -->
-
             </section>
-            <div class="container">
-
-
-
-                <!-- 
-        - #MENU
-      -->
-
-                <section class="section menu" aria-label="menu-label" id="menu">
-                    <div class="container">
-
-                        <p class="section-subtitle-2 label-2-0 text-center">Special Selection</p>
-                        <h2 class="headline-1 section-title text-center">Delicious Menu</h2>
-
-                        <ul class="grid-list" id="menuList">
-                            <!-- Menu items will be dynamically added here using JavaScript -->
-                        </ul>
-
-                        <!-- <p class="menu-text text-center">
-                During winter daily from <span class="span">7:00 pm</span> to <span class="span">9:00 pm</span>
-            </p> -->
-
-                        <a href="#" class="btn btn-primary">
-                            <span class="text text-1">View All Menu</span>
-                            <span class="text text-2" aria-hidden="true">View All Menu</span>
-                        </a>
-
-                    </div>
-                </section>
             </div>
+
+            <div style="margin: 100px 0 100px 0">
+                <h1 class="section-subtitle-2 label-2-0 text-center">Popular</h1>
+                <h2 class="headline-1 mb-20 section-title text-center">Our Specialities</h2>
+                <div class="min">
+                    <div class="tan-img"><img src="assets/images/Tandoori-Chicken-Recipe-500x375.jpg" alt="..."
+                            height="" width="" /></div>
+                    <div class="tan-text">
+                        <h2 class="headline-1 section-title">Tandoori</h2>
+                        <p class="tan-p w-full lg:w-1/2">
+                            A small description of Tandoori <br />and why it is our specialty. and
+                            any if any TV features<br />
+                            we can add
+                            it here</p>
+                        <a href="#" class="btn btn-primary" style="margin:10px 0px 0px 0px">
+                            <span class="text text-1" style="color:black">Order </span>
+
+                            <span class="text text-2" aria-hidden="true">Order</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="min2">
+                    <div class="tan-text2">
+                        <h2 class="headline-1 section-title mx-auto">Biryani</h2>
+                        <p class="tan-p w-full lg:w-1/2 mx-auto">
+                            A small description of Biryani <br />and why it is our specialty. and any if any TV features
+                            we<br />
+                            can add it here
+                        </p>
+                        <a href="#" class="btn btn-primary" style="margin: 10px 0px 0px 0px">
+                            <span class="text text-1" style="color: black">Order </span>
+                            <span class="text text-2" aria-hidden="true">Order</span>
+                        </a>
+                    </div>
+                    <div class="tan-img2" style=" justify-items: end;">
+                        <img src="assets/images/Hyderbadi-Chicken-Biryani-scaled.jpg" alt="..."
+                            class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- ----------------- menu ------------------  -->
+            <section class="hero-section unique-hero-section">
+                <div class="hero-overlay unique-hero-overlay">
+                    <div class="hero-content unique-hero-content">
+                        <h2 class="hero-title unique-hero-title">À La Carte</h2>
+                        <section class="menu-section unique-menu-section">
+                            <a href="menu.html" class="btn btn-primary unique-btn">
+                                <span class="text text-1">View Menu</span>
+                                <span class="text text-2" aria-hidden="true">View Menu</span>
+                            </a>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ------------- Gallery ----------  -->
+
+            <section>
+                <div class="light-box-section" style="padding:100px 0 100px 0">
+                    <h1 class="section-subtitle-2 label-2-0 text-center">Our Gallery</h1>
+                    <h2 class="headline-1 section-title text-center">Gallery</h2>
+
+                    <div class="lightBox">
+                        <div class="lightBox_content">
+                            <i class="fas fa-times close"></i>
+                            <div class="logo_icons">
+                            </div>
+                            <div class="showImg">
+                                <div class="image">
+                                    <img src="images/img1.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image-gallery">
+                        <div class="image-container">
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/1.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
+                                        <div class="text_content">
+                                            <span class="name">SHIBUYA</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/2.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
+
+                                        <div class="text_content">
+                                            <span class="name">SHIBUYA</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/3.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
+
+                                        <div class="text_content">
+                                            <span class="name">SHIBUYA</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/4.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
+
+                                        <div class="text_content">
+                                            <span class="name">SHIBUYA</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/5.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
+
+                                        <div class="text_content">
+                                            <span class="name">SHIBUYA</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img class="gImg" src="assets/images/6.jpg" alt="" />
+                                <div class="logo_icons">
+                                    <a href="#">
+
+                                        <div class="text_content">
+                                            <span class="name">SHIBUYA</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- ------- contact form -------  -->
+
+            <div class="bg-white text-gray-800 text-xl" style="background:#E7E5DC">
+
+                <div class="container mx-auto p-40">
+
+                    <section class="text-center lg:my-20">
+                        <h1 class="section-subtitle-2 label-2-0">Contact Us</h1>
+
+                    </section>
+
+                    <section class="location flex justify-between lg:items-start items-center">
+                        <div class="lg:w-1/2 lg:pr-8">
+                            <div class="h-100 map-container" id="gmap_canvas">
+                                <!-- Google Maps Embed Goes Here -->
+                                <iframe width="100%" height="84%" frameborder="0" style="border: 0"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2278954856747!2d72.8793512148932!3d19.075310857045195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c63074d4ee43%3A0xf7634ce39d6871c9!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1646289722723!5m2!1sen!2sin"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-1/2 text-container text-center">
+                            <h2 class="headline-1 section-title">Location</h2>
+                            <div class="address">
+                                <a href="#" class="location-link">
+                                    <p style="width:100%">104-0061 Tokyo, Chuo CIty, Ginza, 1 Chome-8-2, Ginza Premier
+                                        Building 2F (56
+                                        seats)</p>
+                                </a><br />
+                                <a href="#" class="location-link">
+                                    <p style="width:100%">2 minutes walk from exit 7 of Ginza 1-chrome station on the
+                                        Yurakucho line
+                                    </p>
+                                    <p style="width:100%">2 minutes walk from exit 1 of Kyobashi station on the Ginza
+                                        line</p>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+                    <div
+                        class="contact grid grid-cols-2 place-items-start justify-center mx-auto text-center lg:text-start">
+                        <h2 class="headline-1 section-title">Business Hours</h2>
+                        <a href="#" class="contact-link">
+                            <p style="width:100%">Weekdays - 11:15AM - 2:30PM, 5:00PM - 9:00PM</p><br />
+                            <p style="width:100%">Weekends - 11:30AM - 2:30PM, 5:00PM - 9:00PM</p>
+                        </a>
+                    </div>
+
+                    <div
+                        class="contact grid grid-cols-2 place-items-start my-10 justify-center text-center lg:text-start">
+                        <h2 class="headline-1 section-title">Contact Us</h2>
+                        <a href="#" class="contact-link">
+                            <p style="width:100%">TEL - 03-3567-4005</p>
+                            <br />
+                            <p style="width:100%">andhradining@gmail.com</p>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="dynamicSectionsContainer"></div>
+
 
             <!-- -----footer----- -->
 
             <div class="footer">
                 <footer class="footer-distributed">
-                    <div class="footer-left">
-                        <h3>Andhra<span> Dining</span></h3>
+                    <div class="footer-left flex">
+                        <h3>Andhra Dining</h3>
                         <p class="footer-links">
-                            <a href="#" class="link-1">Home</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Pricing</a>
-                            <a href="#">About</a>
-                            <a href="#">Faq</a>
-                            <a href="#">Contact</a>
+                            <a href="index.html" class="link-1">Home</a>
+                            <a href="about.html">About Us</a>
+                            <a href="branches.html">Branches</a>
+                            <a href="ayurveda.html">Ayurveda</a>
+                            <a href="gallery.html">Gallery</a>
                         </p>
-                        <div class="flex flex-row justify-start items-start my-10 gap-10 text-black">
-                            <p>logo1</p>
-                            <p>logo2</p>
-                            <p>logo3</p>
+                        <div class="flex flex-row justify-start items-start my-5 gap-10">
+                            <div
+                                class="flex flex-row flex-wrap gap-5 items-center justify-start text-2xl mx-auto lg:mx-1">
+                                <i class="fa fa-envelope"></i>
+                                <p class="text-#A07E55"><a href="mailto:support@company.com">support@company.com</a>
+                                </p>
+                            </div>
                         </div>
                         <p class="footer-company-name">Andhra Dining © 2024</p>
                     </div>
                     <div class="footer-center">
                         <!-- <div>
-       <i class="fas fa-map-marker-alt"></i>
-        <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-      </div>
-      <div>
-        <i class="fa fa-phone"></i>
-        <p>+1.555.555.5555</p>
-      </div> -->
-                        <div>
-                            <i class="fa fa-envelope"></i>
-                            <p><a href="mailto:support@company.com">support@company.com</a></p>
-                        </div>
+                             <i class="fas fa-map-marker-alt"></i>
+                              <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+                            </div>
+                            <div>
+                              <i class="fa fa-phone"></i>
+                              <p>+1.555.555.5555</p>
+                            </div> -->
+
                     </div>
                     <div class="footer-right">
                         <p class="footer-company-about">
                             <span>About the company</span>
-                            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu
+                            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit,
+                            eu
                             auctor lacus
                             vehicula sit amet.
                         </p>
@@ -317,60 +1011,181 @@
                             <a href="#"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-github"></i></a>
                         </div>
+
                     </div>
                 </footer>
             </div>
 
-            <script>
-                // Define a function to generate menu items for Branch1
-                function generateMenu(branchName, menuData) {
-                    const menuList = document.getElementById('menuList');
-                    menuList.innerHTML = ''; // Clear existing menu items
 
-                    // Loop through the menuData array and dynamically generate HTML for each menu item
-                    menuData.forEach(item => {
-                        const listItem = document.createElement('li');
-                        listItem.innerHTML = `
-          <div class="menu-card hover:card">
-            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-              <img src="${item.image}" width="100" height="100" loading="lazy" alt="${item.name}" class="img-cover">
-            </figure>
-            <div>
-              <div class="title-wrapper">
-                <h3 class="title-3">
-                  <a href="#" class="card-title">${item.name}</a>
-                </h3>
-                ${item.badge ? `<span class="badge label-1">${item.badge}</span>` : ''}
-                <span class="span title-2">${item.price}</span>
-              </div>
-              <p class="card-text label-1">${item.description}</p>
-            </div>
-          </div>
-        `;
-                        menuList.appendChild(listItem);
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const boxes = document.querySelectorAll('.box');
+
+                    window.addEventListener('scroll', checkBoxes);
+
+                    function checkBoxes() {
+                        const triggerBottom = (window.innerHeight / 5) * 4;
+
+                        boxes.forEach((box) => {
+                            const boxTop = box.getBoundingClientRect().top;
+
+                            if (boxTop < triggerBottom) {
+                                box.classList.add('show');
+                            } else {
+                                box.classList.remove('show');
+                            }
+                        });
+                    }
+
+
+
+                    // Open modal function
+                    function openMenuModal() {
+                        document.getElementById('menuModal').classList.remove('hidden');
+                        document.body.classList.add('overflow-hidden');
+                    }
+
+                    // Close modal function
+                    function closeMenuModal() {
+                        document.getElementById('menuModal').classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                    }
+
+                    // Trigger modal on button click
+                    document.getElementById('viewMenuBtn').addEventListener('click', function (event) {
+                        event.preventDefault();
+                        openMenuModal();
+                    });
+                });
+
+                // Function to create a dynamic reservation form section
+                function createReservationSection(title) {
+                    if (title !== "SHIBUYA") {
+                        return null; // Return null for titles other than "SHIBUYA"
+                    }
+
+                    const section = document.createElement("section");
+                    section.className = "banner";
+
+                    const h1 = document.createElement("h1");
+                    h1.textContent = `BOOK YOUR TABLE NOW AT ${title}`;
+                    h1.style.margin = "10px 0 20px 0";
+                    h1.style.fontSize = "var(--fontSize-title-1)";
+
+                    const cardContainer = document.createElement("div");
+                    cardContainer.className = "card-container";
+
+                    const cardImg = document.createElement("div");
+                    cardImg.className = "card-img";
+
+                    // You can set the background image for cardImg here
+
+                    const cardContent = document.createElement("div");
+                    cardContent.className = "card-content";
+
+                    const tag = document.createElement("h1");
+                    tag.textContent = "Reservation";
+                    tag.className = "tag";
+                    tag.style.textAlign = "center";
+                    tag.style.color = "#000";
+                    tag.style.fontFamily = "var(--fontFamily-dm_sans)";
+                    tag.style.fontSize = "larger";
+
+                    const timings = document.createElement("p");
+                    timings.className = "mx-auto timings";
+                    timings.style.color = "#A07E55";
+                    timings.style.fontSize = "small";
+                    timings.style.fontWeight = "bold";
+                    timings.textContent = "Timings: open at 2am closes at 5pm";
+
+                    const reservationForm = document.createElement("form");
+
+                    // Add form elements dynamically
+                    reservationForm.innerHTML = `
+                        <div class="form-row">
+                            <select name="days">
+                                <option value="day-select">Select Day</option>
+                                <option value="sunday">Sunday</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                            </select>
+
+                            <select name="hours">
+                                <option value="hour-select">Select Hour</option>
+                                <option value="10">10: 00</option>
+                                <option value="12">12: 00</option>
+                                <option value="14">14: 00</option>
+                                <option value="16">16: 00</option>
+                                <option value="18">18: 00</option>
+                                <option value="20">20: 00</option>
+                                <option value="22">22: 00</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <input type="text" placeholder="Full Name">
+                                <input type="text" placeholder="Phone Number">
+                                    <input type="email" placeholder="Email"> <!-- Added email input -->
+                                    </div>
+
+                                    <div class="form-row">
+                                        <input type="number" placeholder="How Many Persons?" min="1">
+                                            <div class="btn btn-primary" style="
+                                        width:100%;
+                                        color: black;
+                                        height:100%;
+                                        font-family: var(--fontFamily-dm_sans);
+                                        padding: 6px 20px;
+                                        margin-top: 13px;
+                                        letter-spacing: 1px;
+                                    ">
+                                                <span class="text text-1">Book Table</span>
+                                                <span class="text text-2" aria-hidden="true">Book Table</span>
+                                            </div>
+                                    </div>
+    `;
+
+                    // Add event listener to form inputs for changing text color
+                    reservationForm.querySelectorAll('input, select').forEach((input) => {
+                        input.addEventListener('input', () => {
+                            input.style.color = "black";
+                        });
                     });
 
-                    // You can customize the branch name display as needed
-                    console.log(`Showing menu for ${branchName}`);
+                    // Append elements to the container
+                    cardContent.appendChild(tag);
+                    cardContent.appendChild(timings);
+                    cardContent.appendChild(reservationForm);
+                    cardContainer.appendChild(cardImg);
+                    cardContainer.appendChild(cardContent);
+                    section.appendChild(h1);
+                    section.appendChild(cardContainer);
+
+                    return section;
                 }
 
-                // Example menu data for Branch1
-                const branch1MenuData = [
-                    { name: 'Greek Salad', image: './assets/images/menu-1.png', price: '$25.50', description: 'Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.', badge: 'Seasonal' },
-                    { name: 'Lasagne', image: './assets/images/menu-2.png', price: '$40.00', description: 'Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.' },
-                    { name: 'Butternut Pumpkin', image: './assets/images/menu-3.png', price: '$10.00', description: 'Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.' },
-                    { name: 'Tokusen Wagyu', image: './assets/images/menu-4.png', price: '$39.00', description: 'Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.', badge: 'New' },
-                    { name: 'Olivas Rellenas', image: './assets/images/menu-5.png', price: '$25.00', description: 'Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper.' },
-                    { name: 'Opu Fish', image: './assets/images/menu-6.png', price: '$49.00', description: 'Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices' }
-                ];
-                generateMenu('Branch1', branch1MenuData);
+                // Create dynamic reservation sections based on titles
+                const reservationTitles = ["GINZA", "SHIBUYA", "DAIMON", "OKACHIMACHI", "KOMATSUGAWA"];
 
-                // Generate the menu for Branch1
-                generateMenu('Branch1', branch1MenuData);
+                const dynamicSectionsContainer = document.getElementById("dynamicSectionsContainer");
+
+                reservationTitles.forEach((title) => {
+                    const reservationSection = createReservationSection(title);
+                    if (reservationSection) {
+                        dynamicSectionsContainer.appendChild(reservationSection);
+                    }
+                });
+
+
+
             </script>
-
-
             <script src="assets/js/script.js"></script>
+            <script src="assets/js/b1gallery.js"></script>
 
 </body>
 
